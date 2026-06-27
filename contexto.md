@@ -311,7 +311,7 @@ Prioridad: **simple y acorde a DAW**, con **backend + SQL + panel admin** visibl
 - [ ] **Favicon** — pendiente de diseñar (ver nota abajo)
 - [ ] Meta tags Open Graph (imagen preview para LinkedIn/WhatsApp; puede reutilizar favicon o crear una aparte)
 - [ ] CV descargable (opcional)
-- [ ] SVG o asset del mapa de Europa en relieve
+- [x] SVG mapa Europa en relieve — `assets/maps/europe-relief.svg` (+ README atribución)
 - [ ] Cuenta/servicio SMTP *(opcional, fase posterior)*
 - [ ] Colección Postman del API de contacto
 - [ ] `.env.example` con variables documentadas (sin secretos reales)
@@ -359,7 +359,8 @@ Hace falta un favicon (icono de pestaña del navegador). **Todavía no hay conce
 3. ~~Decisión acceso v1: Opción C (público + admin + BD)~~ ✓
 4. ~~Paso 0.1 — estructura de carpetas~~ ✓
 5. ~~Paso 0.2 — Git + `.gitignore`~~ ✓
-6. Paso 0.4 — SVG mapa Europa *(siguiente)*
+6. ~~Paso 0.4 — SVG mapa Europa~~ ✓
+7. Paso 0.5 — textos breves mapa *(siguiente)*
 
 ---
 

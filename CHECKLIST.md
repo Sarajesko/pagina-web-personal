@@ -13,7 +13,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 3. **No saltar pasos** — aunque parezcan independientes, el orden evita rehacer trabajo.
 4. **Estados:** `[ ]` pendiente · `[~]` en curso · `[x]` hecho · `[-]` omitido
 
-**Paso actual:** **0.4** — SVG mapa Europa *(esperando tu validación del 0.2)*
+**Paso actual:** **0.5** — textos breves mapa *(esperando tu validación del 0.4)*
 
 ---
 
@@ -24,7 +24,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 | 0.1 | Crear estructura de carpetas del proyecto | `frontend/`, `backend/`, `assets/`, README | `[x]` |
 | 0.2 | Inicializar Git + `.gitignore` (`.env`, `__pycache__`, `*.db`, etc.) | Repo local listo | `[x]` |
 | 0.3 | Confirmar stack: **Python + Flask + SQLite** | Documentado en README | `[x]` |
-| 0.4 | Recopilar / buscar **SVG mapa Europa** en relieve (licencia libre) | `assets/maps/` | `[ ]` |
+| 0.4 | Recopilar / buscar **SVG mapa Europa** en relieve (licencia libre) | `assets/maps/europe-relief.svg` | `[x]` |
 | 0.5 | Redactar **textos breves** mapa (Sevilla, Galway, Cork) | `content/map-locations.md` | `[ ]` |
 | 0.6 | Restaurar **logos** en `assets/logos/` | 4 archivos | `[x]` |
 
@@ -172,8 +172,9 @@ Total: ~50 pasos
 | Fecha | Paso | Feedback |
 |-------|------|----------|
 | jun. 2026 | 0.1 | Estructura carpetas — OK Pablo |
-| jun. 2026 | 0.2 | Git init + `.gitignore` — pendiente OK Pablo |
+| jun. 2026 | 0.2 | Git init + `.gitignore` — OK Pablo |
 | jun. 2026 | 0.6 | Logos copiados desde Downloads |
+| jun. 2026 | 0.4 | Mapa `europe-relief.svg` (Wikimedia CC BY-SA 4.0) — pendiente OK |
 
 ---
 
