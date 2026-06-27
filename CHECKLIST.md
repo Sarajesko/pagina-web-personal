@@ -13,7 +13,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 3. **No saltar pasos** — aunque parezcan independientes, el orden evita rehacer trabajo.
 4. **Estados:** `[ ]` pendiente · `[~]` en curso · `[x]` hecho · `[-]` omitido
 
-**Paso actual:** **1.1** — wireframe escenas *(esperando tu validación del 0.5)*
+**Paso actual:** **2.1** — esqueleto HTML completo *(esperando tu validación del 1.3)*
 
 ---
 
@@ -36,9 +36,9 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
-| 1.1 | Wireframe ASCII / esquema de **todas las escenas** horizontales | Documento en repo | `[ ]` |
-| 1.2 | Definir **paleta de colores** y **tipografías** (Google Fonts) | Variables CSS documentadas | `[ ]` |
-| 1.3 | Maqueta estática **Portada / FADE IN** con texturas tipo Sala X | HTML + CSS (sin JS) | `[ ]` |
+| 1.1 | Wireframe ASCII / esquema de **todas las escenas** horizontales | `docs/wireframe.md` | `[x]` |
+| 1.2 | Definir **paleta de colores** y **tipografías** (Google Fonts) | `docs/design-tokens.md` + `frontend/css/tokens.css` | `[x]` |
+| 1.3 | Maqueta estática **Portada / FADE IN** con texturas tipo Sala X | `frontend/index.html` + CSS | `[x]` |
 
 **Validación fase 1:** te gusta la atmósfera visual antes de construir el resto.
 
@@ -175,7 +175,10 @@ Total: ~50 pasos
 | jun. 2026 | 0.2 | Git init + `.gitignore` — OK Pablo |
 | jun. 2026 | 0.6 | Logos copiados desde Downloads |
 | jun. 2026 | 0.4 | Mapa europe-relief.svg — OK |
-| jun. 2026 | 0.5 | Textos mapa en map-locations.md — pendiente OK |
+| jun. 2026 | 0.5 | Textos mapa — OK |
+| jun. 2026 | 1.1 | Wireframe — OK |
+| jun. 2026 | 1.2 | Paleta + tipografías — OK |
+| jun. 2026 | 1.3 | Portada FADE IN — pendiente OK |
 
 ---
 

@@ -1,0 +1,67 @@
+/**
+ * Design tokens — Pablo García Márquez portfolio
+ * Documentación: docs/design-tokens.md
+ */
+
+:root {
+  /* Colores */
+  --color-bg: #0c0c0e;
+  --color-bg-elevated: #16161a;
+  --color-bg-panel: #1e1e24;
+  --color-surface: #25252d;
+  --color-text: #e8e4dc;
+  --color-text-muted: #9c968a;
+  --color-text-dim: #6b665c;
+  --color-accent: #c8102e;
+  --color-accent-hover: #e01838;
+  --color-accent-soft: rgba(200, 16, 46, 0.15);
+  --color-map-marker: #e63946;
+  --color-border: #2e2e36;
+  --color-border-light: #3d3d48;
+  --color-success: #4ade80;
+  --color-error: #f87171;
+
+  /* Tipografía */
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-script: "Courier Prime", "Courier New", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-hero: clamp(2.5rem, 6vw, 4.5rem);
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* Espaciado */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Layout escenas */
+  --scene-width: 100vw;
+  --scene-max-content: 720px;
+  --header-height: 3.5rem;
+  --footer-height: 3rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-scene: 600ms;
+  --duration-fade: 400ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-scene: 0ms;
+    --duration-fade: 0ms;
+  }
+}

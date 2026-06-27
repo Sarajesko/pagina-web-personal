@@ -244,8 +244,11 @@ assets/logos/
 ```
 
 ### Paleta y tipografía
-- Orientación: oscuro + acentos (rojo de Multiplicalia/CORE como posible acento).
-- Tipografía con carácter — evocar guión/cine sin caer en cliché de Courier en todo.
+
+Definidos en [`docs/design-tokens.md`](../docs/design-tokens.md) y [`frontend/css/tokens.css`](../frontend/css/tokens.css).
+
+- **Oscuro escénico** (`#0c0c0e`) + texto papel (`#e8e4dc`) + acento rojo CORE (`#c8102e`)
+- **Syne** — títulos · **Source Sans 3** — cuerpo · **Courier Prime** — solo rótulos guión (`FADE IN`, `ESCENA 03`)
 
 ---
 
@@ -361,7 +364,8 @@ Hace falta un favicon (icono de pestaña del navegador). **Todavía no hay conce
 5. ~~Paso 0.2 — Git + `.gitignore`~~ ✓
 6. ~~Paso 0.4 — SVG mapa Europa~~ ✓
 7. ~~Paso 0.5 — textos breves mapa~~ ✓
-8. **Fase 1** — wireframe escenas *(siguiente)*
+8. ~~Fase 1 — portada FADE IN~~ ✓
+9. **Fase 2** — esqueleto HTML + scroll lateral *(siguiente)*
 
 ---
 
