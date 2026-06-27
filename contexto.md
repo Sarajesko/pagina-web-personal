@@ -307,7 +307,7 @@ Prioridad: **simple y acorde a DAW**, con **backend + SQL + panel admin** visibl
 
 ### Pendientes
 - [ ] Capturas de pantalla de proyectos (Manga-festival-Web, etc.)
-- [ ] Textos breves definitivos por punto del mapa
+- [x] Textos breves definitivos por punto del mapa — `content/map-locations.md` *(editables)*
 - [ ] **Favicon** — pendiente de diseñar (ver nota abajo)
 - [ ] Meta tags Open Graph (imagen preview para LinkedIn/WhatsApp; puede reutilizar favicon o crear una aparte)
 - [ ] CV descargable (opcional)
@@ -360,7 +360,8 @@ Hace falta un favicon (icono de pestaña del navegador). **Todavía no hay conce
 4. ~~Paso 0.1 — estructura de carpetas~~ ✓
 5. ~~Paso 0.2 — Git + `.gitignore`~~ ✓
 6. ~~Paso 0.4 — SVG mapa Europa~~ ✓
-7. Paso 0.5 — textos breves mapa *(siguiente)*
+7. ~~Paso 0.5 — textos breves mapa~~ ✓
+8. **Fase 1** — wireframe escenas *(siguiente)*
 
 ---
 
