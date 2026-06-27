@@ -13,7 +13,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 3. **No saltar pasos** — aunque parezcan independientes, el orden evita rehacer trabajo.
 4. **Estados:** `[ ]` pendiente · `[~]` en curso · `[x]` hecho · `[-]` omitido
 
-**Paso actual:** **2.1** — esqueleto HTML completo *(esperando tu validación del 1.3)*
+**Paso actual:** **5.2** — Proyectos *(esperando validación 5.1)*
 
 ---
 
@@ -48,10 +48,10 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
-| 2.1 | `index.html` semántico con todas las secciones | Esqueleto completo | `[ ]` |
-| 2.2 | CSS base: reset, variables, texturas, tipografía | `frontend/css/main.css` | `[ ]` |
-| 2.3 | Sistema **scroll lateral** entre escenas (JS) | Navegación horizontal | `[ ]` |
-| 2.4 | Indicador de escena / progreso (tipo «pág. script») | UI navegación | `[ ]` |
+| 2.1 | `index.html` semántico con todas las secciones | Esqueleto 11 escenas | `[x]` |
+| 2.2 | CSS base: reset, variables, texturas, tipografía, layout horizontal | `frontend/css/main.css` | `[x]` |
+| 2.3 | Sistema **scroll lateral** entre escenas (JS) | `frontend/js/scroll.js` | `[x]` |
+| 2.4 | Indicador de escena / progreso (tipo «pág. script») | Header `Pág. 01/11 · FADE IN` | `[x]` |
 
 **Validación fase 2:** scroll lateral fluido entre escenas.
 
@@ -61,12 +61,12 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
-| 3.1 | **Portada** — nombre, rol, CTA prácticas DAW | Contenido real | `[ ]` |
-| 3.2 | **El guión** — intro al concepto | Texto + estilo | `[ ]` |
-| 3.3 | **Escena DAW Ilerna** | Logo Ilerna | `[ ]` |
-| 3.4 | **Escena CORE Networks** | Logo CORE | `[ ]` |
-| 3.5 | **Escena Multiplicalia** | Logo Multiplicalia | `[ ]` |
-| 3.6 | **Escena Erasmus+** — Galway + Cork | Logo Fluid Financial | `[ ]` |
+| 3.1 | **Portada** — nombre, rol, CTA prácticas DAW | Contenido real | `[x]` |
+| 3.2 | **El guión** — intro al concepto | Texto + estilo | `[x]` |
+| 3.3 | **Escena DAW Ilerna** | Logo Ilerna + CTA prácticas | `[x]` |
+| 3.4 | **Escena CORE Networks** | Logo CORE + certificado | `[x]` |
+| 3.5 | **Escena Multiplicalia** | Logo + panel detalle | `[x]` |
+| 3.6 | **Escena Erasmus+** — Galway + Cork | Logo Fluid + panel | `[x]` |
 
 **Validación fase 3:** trayectoria narrativa completa.
 
@@ -76,10 +76,10 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
-| 4.1 | Integrar **mapa Europa en relieve** (SVG) | Escena mapa | `[ ]` |
-| 4.2 | **Puntos rojos**: Sevilla, Galway, Cork | Marcadores | `[ ]` |
-| 4.3 | Panel al click: logo + texto breve | Interacción Fase 2 | `[ ]` |
-| 4.4 | Transición scroll → modo mapa (clicks sin avanzar scroll) | Comportamiento definido | `[ ]` |
+| 4.1 | Integrar **mapa Europa en relieve** (SVG) | Escena mapa | `[x]` |
+| 4.2 | **Puntos rojos**: Sevilla, Galway, Cork | Marcadores | `[x]` |
+| 4.3 | Panel al click: logo + texto breve | `map.js` | `[x]` |
+| 4.4 | Transición scroll → modo mapa (clicks sin avanzar scroll) | Rueda bloqueada en mapa | `[x]` |
 
 **Validación fase 4:** Galway y Cork claramente diferenciados.
 
@@ -89,7 +89,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
-| 5.1 | Sección **Sobre mí** | Texto LinkedIn adaptado | `[ ]` |
+| 5.1 | Sección **Sobre mí** | Texto LinkedIn adaptado | `[x]` |
 | 5.2 | Sección **Proyectos** — tarjetas públicas + GitHub | Enlace GitHub visible | `[ ]` |
 | 5.3 | Capturas de proyectos | `assets/projects/` | `[ ]` |
 | 5.4 | Sección **Stack / habilidades** | Lista visual | `[ ]` |
@@ -178,7 +178,12 @@ Total: ~50 pasos
 | jun. 2026 | 0.5 | Textos mapa — OK |
 | jun. 2026 | 1.1 | Wireframe — OK |
 | jun. 2026 | 1.2 | Paleta + tipografías — OK |
-| jun. 2026 | 1.3 | Portada FADE IN — pendiente OK |
+| jun. 2026 | 1.3 | Portada FADE IN — OK |
+| jun. 2026 | 2.1 | Esqueleto HTML — OK |
+| jun. 2026 | 2.2 | CSS base + layout horizontal — OK |
+| jun. 2026 | 2.3 | scroll.js — OK |
+| jun. 2026 | 2.4 | Indicador escena — OK |
+| jun. 2026 | 3.1–3.2 | Portada + El guión — pendiente OK |
 
 ---
 

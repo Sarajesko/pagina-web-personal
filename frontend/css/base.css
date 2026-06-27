@@ -13,6 +13,7 @@
 html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,7 +23,33 @@ body {
   line-height: var(--leading-normal);
   color: var(--color-text);
   background-color: var(--color-bg);
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-border-light);
+  outline-offset: 2px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent);
+}
+
+.scene__content a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 img,
@@ -76,14 +103,18 @@ button {
   left: 0;
   right: 0;
   z-index: 100;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   height: var(--header-height);
   padding: 0 var(--space-lg);
   border-bottom: 1px solid var(--color-border);
   background: rgba(12, 12, 14, 0.82);
   backdrop-filter: blur(8px);
+}
+
+.site-header__brand {
+  justify-self: start;
 }
 
 .site-header__brand {
@@ -101,6 +132,42 @@ button {
 
 .site-header__role {
   color: var(--color-text-muted);
+}
+
+/* Indicador escena — estilo guión */
+
+.scene-indicator {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-script);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.scene-indicator__page {
+  color: var(--color-text-dim);
+}
+
+#scene-current {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.scene-indicator__title {
+  color: var(--color-text);
+}
+
+.scene-indicator__sep {
+  color: var(--color-text-dim);
+}
+
+.scene-nav {
+  justify-self: end;
 }
 
 /* Navegación escenas */
@@ -142,17 +209,44 @@ button {
   line-height: 1;
 }
 
-/* Escenas — contenedor (scroll horizontal en Fase 2) */
+/* Tipografía guión — global */
+
+.script-label {
+  font-family: var(--font-script);
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+/* Escenas — scroll horizontal (CSS; JS refina en 2.3) */
 
 .scenes {
   position: relative;
   z-index: 2;
-  min-height: 100dvh;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100dvh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scenes::-webkit-scrollbar {
+  display: none;
 }
 
 .scene {
+  flex: 0 0 100vw;
   min-height: 100dvh;
-  width: var(--scene-width);
+  width: 100vw;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,15 +319,48 @@ button {
   color: var(--color-accent);
 }
 
-/* Responsive header nav — scroll horizontal en móvil */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scenes {
+    scroll-behavior: auto;
+  }
+}
+
+/* Responsive header nav */
 
 @media (max-width: 768px) {
   .site-header {
-    padding: 0 var(--space-md);
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    height: auto;
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .site-header__brand {
+    grid-column: 1;
+  }
+
+  .scene-indicator {
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .scene-indicator__title {
+    display: none;
+  }
+
+  .scene-indicator__sep {
+    display: none;
   }
 
   .scene-nav {
-    max-width: 55vw;
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    max-width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
   }

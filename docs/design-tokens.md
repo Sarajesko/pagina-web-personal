@@ -2,7 +2,7 @@
 
 Referencia visual: atmósfera oscura y texturada tipo [Sala X](https://lasalax.com/), acentos rojos (CORE / Multiplicalia), metáfora guión.
 
-Implementación CSS: [`frontend/css/tokens.css`](../frontend/css/tokens.css)
+Implementación CSS: [`frontend/css/main.css`](../frontend/css/main.css) (importa tokens, base, scenes, portada).
 
 ---
 

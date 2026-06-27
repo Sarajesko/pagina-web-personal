@@ -365,7 +365,18 @@ Hace falta un favicon (icono de pestaña del navegador). **Todavía no hay conce
 6. ~~Paso 0.4 — SVG mapa Europa~~ ✓
 7. ~~Paso 0.5 — textos breves mapa~~ ✓
 8. ~~Fase 1 — portada FADE IN~~ ✓
-9. **Fase 2** — esqueleto HTML + scroll lateral *(siguiente)*
+9. ~~Fase 2.1 — esqueleto HTML~~ ✓
+10. ~~Fase 2.2 — CSS base~~ ✓
+11. ~~Fase 2.3 — scroll lateral JS~~ ✓
+12. ~~Fase 2 — frontend base~~ ✓
+13. ~~Fase 3.1–3.2 Portada + El guión~~ ✓
+14. ~~Fase 3.3 DAW Ilerna~~ ✓
+15. ~~Fase 3.4 CORE Networks~~ ✓
+16. ~~Fase 3.5 Multiplicalia~~ ✓
+17. ~~Fase 3 — trayectoria narrativa~~ ✓
+18. ~~Fase 4 — mapa interactivo~~ ✓
+19. ~~Fase 5.1 Sobre mí~~ ✓
+20. **Fase 5.2** — Proyectos *(siguiente)*
 
 ---
 

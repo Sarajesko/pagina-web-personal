@@ -1,0 +1,9 @@
+/**
+ * Entrada única de estilos — Pablo García Márquez portfolio
+ * Orden: tokens → base → escenas → portada
+ */
+
+@import url("tokens.css");
+@import url("base.css");
+@import url("scenes.css");
+@import url("portada.css");
