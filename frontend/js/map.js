@@ -1,5 +1,6 @@
 /**
  * Mapa interactivo — Sevilla, Galway, Cork
+ * Posiciones % sobre el mapa LAEA (europe-relief.svg, viewBox 367×306)
  * Textos: content/map-locations.md
  */
 
@@ -7,27 +8,73 @@
   "use strict";
 
   var LOGO_BASE = "../assets/logos/";
+  var figure = document.querySelector(".mapa__figure");
+  var img = figure && figure.querySelector("img");
   var panel = document.getElementById("mapa-panel");
   var markers = document.querySelectorAll(".mapa__marker");
-  if (!panel || markers.length === 0) return;
+  if (!figure || !img || !panel || markers.length === 0) return;
 
+  /*
+   * Posiciones % sobre europe-relief.svg (proyección LAEA, EPSG:3035).
+   * Extensión oficial Wikimedia (Europe_laea_location_map.svg):
+   * X 2555000–7405000 m, Y 1350000–5500000 m (Y invertido en pantalla).
+   */
   var locations = {
     sevilla: {
       title: "Sevilla",
       text: "DAW en Ilerna. Prácticas de WordPress y SEO en Multiplicalia.",
       logos: ["ilerna.jpg", "multiplicalia.jpg"],
+      x: 7.2,
+      y: 90.6,
     },
     galway: {
       title: "Galway",
       text: "Beca Erasmus+ de la UE. Aquí resido durante la beca.",
       logos: [],
+      x: 10.5,
+      y: 47.8,
     },
     cork: {
       title: "Cork",
       text: "Sede de Fluid Financial. Prácticas full stack en remoto.",
       logos: ["fluid-financial.jpg"],
+      x: 10.7,
+      y: 51.6,
     },
   };
+
+  function getImageContentBox() {
+    var rect = img.getBoundingClientRect();
+    var nw = img.naturalWidth;
+    var nh = img.naturalHeight;
+    if (!nw || !nh) return null;
+
+    var scale = Math.min(rect.width / nw, rect.height / nh);
+    var w = nw * scale;
+    var h = nh * scale;
+    return {
+      offsetX: (rect.width - w) / 2,
+      offsetY: (rect.height - h) / 2,
+      width: w,
+      height: h,
+    };
+  }
+
+  function placeMarkers() {
+    var box = getImageContentBox();
+    if (!box) return;
+
+    markers.forEach(function (marker) {
+      var id = marker.getAttribute("data-location");
+      var loc = locations[id];
+      if (!loc) return;
+
+      var x = box.offsetX + (loc.x / 100) * box.width;
+      var y = box.offsetY + (loc.y / 100) * box.height;
+      marker.style.left = x + "px";
+      marker.style.top = y + "px";
+    });
+  }
 
   function renderLogos(logos) {
     if (!logos.length) return "";
@@ -74,4 +121,16 @@
       selectLocation(marker.getAttribute("data-location"));
     });
   });
+
+  function initMap() {
+    placeMarkers();
+  }
+
+  if (img.complete) {
+    initMap();
+  } else {
+    img.addEventListener("load", initMap);
+  }
+
+  window.addEventListener("resize", placeMarkers);
 })();

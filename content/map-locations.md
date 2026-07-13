@@ -40,3 +40,4 @@ Editables — sustituir cuando quieras tu propia versión.
 - Máximo ~2 líneas en pantalla; estos textos están pensados para no sobrecargar el mapa.
 - Galway y Cork son puntos distintos: residencia vs sede de la empresa.
 - En JS: leer título + texto + logos por id de ubicación (`sevilla`, `galway`, `cork`).
+- Posiciones de marcadores: `frontend/js/map.js` (coordenadas % sobre `europe-relief.svg`).

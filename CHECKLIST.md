@@ -13,7 +13,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 3. **No saltar pasos** — aunque parezcan independientes, el orden evita rehacer trabajo.
 4. **Estados:** `[ ]` pendiente · `[~]` en curso · `[x]` hecho · `[-]` omitido
 
-**Paso actual:** **5.2** — Proyectos *(esperando validación 5.1)*
+**Paso actual:** **7.2** — Accesibilidad *(esperando validación 7.1)*
 
 ---
 
@@ -23,7 +23,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 |---|------|------------|--------|
 | 0.1 | Crear estructura de carpetas del proyecto | `frontend/`, `backend/`, `assets/`, README | `[x]` |
 | 0.2 | Inicializar Git + `.gitignore` (`.env`, `__pycache__`, `*.db`, etc.) | Repo local listo | `[x]` |
-| 0.3 | Confirmar stack: **Python + Flask + SQLite** | Documentado en README | `[x]` |
+| 0.3 | Confirmar stack: **Python + FastAPI + SQLite** | Documentado en README | `[x]` |
 | 0.4 | Recopilar / buscar **SVG mapa Europa** en relieve (licencia libre) | `assets/maps/europe-relief.svg` | `[x]` |
 | 0.5 | Redactar **textos breves** mapa (Sevilla, Galway, Cork) | `content/map-locations.md` | `[x]` |
 | 0.6 | Restaurar **logos** en `assets/logos/` | 4 archivos | `[x]` |
@@ -90,10 +90,10 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
 | 5.1 | Sección **Sobre mí** | Texto LinkedIn adaptado | `[x]` |
-| 5.2 | Sección **Proyectos** — tarjetas públicas + GitHub | Enlace GitHub visible | `[ ]` |
-| 5.3 | Capturas de proyectos | `assets/projects/` | `[ ]` |
-| 5.4 | Sección **Stack / habilidades** | Lista visual | `[ ]` |
-| 5.5 | Enlaces **LinkedIn** y **GitHub** | Footer / contacto | `[ ]` |
+| 5.2 | Sección **Proyectos** — tarjetas públicas + GitHub | Enlace GitHub visible | `[x]` |
+| 5.3 | Capturas de proyectos | Slots + fallback (`assets/projects/`) | `[x]` |
+| 5.4 | Sección **Stack / habilidades** | Lista visual | `[x]` |
+| 5.5 | Enlaces **LinkedIn** y **GitHub** | Footer + contacto + proyectos | `[x]` |
 
 **Validación fase 5:** portfolio frontend completo (formulario conectado en Fase 6).
 
@@ -103,18 +103,18 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
-| 6.1 | Esquema **SQLite**: `contact_messages`, `projects`, `admin_users` | `backend/schema.sql` | `[ ]` |
-| 6.2 | Flask app base + modelos / acceso SQL | `backend/` ejecutable en local | `[ ]` |
-| 6.3 | `POST /api/contact` — validación + INSERT | Mensajes en BD | `[ ]` |
-| 6.4 | `GET /api/projects` — listado **público** (sin auth) | Frontend consume proyectos | `[ ]` |
-| 6.5 | Auth admin: `POST /api/admin/login` + sesión | Solo Pablo | `[ ]` |
-| 6.6 | CRUD admin proyectos: `POST/PUT/DELETE /api/admin/projects` | Gestión desde panel | `[ ]` |
-| 6.7 | `GET /api/admin/messages` — listar mensajes contacto | Panel admin | `[ ]` |
-| 6.8 | Frontend: formulario contacto + validación JS + `fetch` | Sección Contacto | `[ ]` |
-| 6.9 | Frontend: **panel admin** (`frontend/admin/`) | Login + mensajes + proyectos | `[ ]` |
-| 6.10 | `.env.example` + README backend | Sin secretos en repo | `[ ]` |
-| 6.11 | Colección **Postman** — endpoints públicos y admin | `postman/` | `[ ]` |
-| 6.12 | CORS + errores 400 / 401 / 500 | Listo para producción | `[ ]` |
+| 6.1 | Esquema **SQLite**: `contact_messages`, `projects`, `admin_users` | `backend/schema.sql` + `seed.sql` | `[x]` |
+| 6.2 | FastAPI app base + modelos / acceso SQL | `backend/` ejecutable en local | `[x]` |
+| 6.3 | `POST /api/contact` — validación + INSERT | Mensajes en BD | `[x]` |
+| 6.4 | `GET /api/projects` — listado **público** (sin auth) | Frontend consume proyectos | `[x]` |
+| 6.5 | Auth admin: `POST /api/admin/login` + sesión | Solo Pablo | `[x]` |
+| 6.6 | CRUD admin proyectos: `POST/PUT/DELETE /api/admin/projects` | Gestión desde panel | `[x]` |
+| 6.7 | `GET /api/admin/messages` — listar mensajes contacto | Panel admin | `[x]` |
+| 6.8 | Frontend: formulario contacto + validación JS + `fetch` | Sección Contacto | `[x]` |
+| 6.9 | Frontend: **panel admin** (`frontend/admin/`) | Login + mensajes + proyectos | `[x]` |
+| 6.10 | `.env.example` + README backend | Sin secretos en repo | `[x]` |
+| 6.11 | Colección **Postman** — endpoints públicos y admin | `postman/` | `[x]` |
+| 6.12 | CORS + errores 400 / 401 / 500 | Listo para producción | `[x]` |
 
 **Validación fase 6:** formulario guarda en BD; proyectos públicos vía API; admin funcional.
 
@@ -124,7 +124,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
-| 7.1 | **Responsive** — móvil (swipe o fallback) | Viewport estrecho OK | `[ ]` |
+| 7.1 | **Responsive** — móvil (swipe o fallback) | Viewport estrecho OK | `[x]` |
 | 7.2 | **Accesibilidad** — teclado, focus, `prefers-reduced-motion` | Navegable | `[ ]` |
 | 7.3 | **Favicon** (identidad visual clara) | `assets/favicon/` | `[ ]` |
 | 7.4 | **Meta tags** Open Graph + SEO | Preview LinkedIn | `[ ]` |
@@ -140,7 +140,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 | # | Paso | Entregable | Estado |
 |---|------|------------|--------|
 | 8.1 | Desplegar **frontend** (GitHub Pages / Netlify) | URL pública | `[ ]` |
-| 8.2 | Desplegar **API Flask + SQLite** (Render / Railway) | URL API + env vars | `[ ]` |
+| 8.2 | Desplegar **API FastAPI + SQLite** (Render / Railway) | URL API + env vars | `[ ]` |
 | 8.3 | Conectar frontend con API producción | Formulario + proyectos en prod | `[ ]` |
 | 8.4 | Enlazar web desde **LinkedIn** | Perfil actualizado | `[ ]` |
 | 8.5 | README final — local, BD, admin, despliegue | Documentación DAW-ready | `[ ]` |

@@ -1,0 +1,201 @@
+{
+  "info": {
+    "name": "Portfolio Pablo — API",
+    "description": "Colección v1 — FastAPI + SQLite. Base URL local: http://127.0.0.1:5000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "GET /api/health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Público",
+      "item": [
+        {
+          "name": "GET /api/projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/projects"
+          }
+        },
+        {
+          "name": "POST /api/contact — válido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ana Test\",\n  \"email\": \"ana@test.com\",\n  \"subject\": \"practicas-daw\",\n  \"message\": \"Mensaje de prueba desde Postman.\",\n  \"privacy\": true\n}"
+            },
+            "url": "{{baseUrl}}/api/contact"
+          }
+        },
+        {
+          "name": "POST /api/contact — email inválido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ana\",\n  \"email\": \"mal\",\n  \"subject\": \"otro\",\n  \"message\": \"Mensaje de prueba desde Postman.\",\n  \"privacy\": true\n}"
+            },
+            "url": "{{baseUrl}}/api/contact"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "POST /api/admin/login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Login OK', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"changeme\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/login"
+          }
+        },
+        {
+          "name": "GET /api/admin/me",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/admin/me"
+          }
+        },
+        {
+          "name": "POST /api/admin/logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/admin/logout"
+          }
+        },
+        {
+          "name": "GET /api/admin/projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/admin/projects"
+          }
+        },
+        {
+          "name": "POST /api/admin/projects",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Proyecto test\",\n  \"description\": \"Creado desde Postman.\",\n  \"stack\": [\"Python\", \"FastAPI\"],\n  \"github_url\": \"https://github.com/Sarajesko/test\",\n  \"is_featured\": false,\n  \"sort_order\": 99,\n  \"is_published\": false\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/projects"
+          }
+        },
+        {
+          "name": "PUT /api/admin/projects/{id}",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"is_published\": true,\n  \"title\": \"Proyecto test (publicado)\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/projects/4"
+          }
+        },
+        {
+          "name": "DELETE /api/admin/projects/{id}",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/admin/projects/4"
+          }
+        },
+        {
+          "name": "GET /api/admin/messages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/admin/messages"
+          }
+        },
+        {
+          "name": "PATCH /api/admin/messages/{id}",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"is_read\": true\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/messages/1"
+          }
+        }
+      ]
+    }
+  ]
+}

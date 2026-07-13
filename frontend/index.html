@@ -2,13 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Pablo García Márquez — Desarrollador full stack · Ex-guionista. Portfolio personal.">
   <title>Pablo García Márquez · Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css?v=3">
+  <link rel="stylesheet" href="css/portada.css?v=4">
 </head>
 <body>
   <div class="texture-layer" aria-hidden="true"></div>
@@ -49,7 +50,7 @@
         <p class="script-label">FADE IN:</p>
         <h1 id="portada-title" class="portada__title">Pablo García Márquez</h1>
         <p class="portada__subtitle">Desarrollador full stack · Ex-guionista</p>
-        <a href="#contacto" class="portada__cta">Busco prácticas DAW — escríbeme</a>
+        <a href="#contacto" class="portada__cta">Contacto</a>
         <p class="portada__hint">
           <span class="portada__hint-arrow" aria-hidden="true">→</span>
           scroll para empezar
@@ -206,31 +207,19 @@
         <div class="mapa__layout">
           <div class="mapa__wrap">
             <figure class="mapa__figure">
-              <img src="../assets/maps/europe-relief.svg" alt="Mapa topográfico de Europa" loading="lazy">
+              <img
+                src="../assets/maps/europe-relief.svg"
+                alt="Mapa topográfico de Europa"
+                loading="lazy"
+                width="680"
+                height="566"
+              >
+              <div class="mapa__markers" aria-hidden="false">
+                <button type="button" class="mapa__marker" data-location="sevilla" aria-label="Sevilla"></button>
+                <button type="button" class="mapa__marker" data-location="galway" aria-label="Galway"></button>
+                <button type="button" class="mapa__marker" data-location="cork" aria-label="Cork"></button>
+              </div>
             </figure>
-            <div class="mapa__markers">
-              <button
-                type="button"
-                class="mapa__marker"
-                data-location="sevilla"
-                style="--x: 41%; --y: 76%;"
-                aria-label="Sevilla"
-              ></button>
-              <button
-                type="button"
-                class="mapa__marker"
-                data-location="galway"
-                style="--x: 26%; --y: 46%;"
-                aria-label="Galway"
-              ></button>
-              <button
-                type="button"
-                class="mapa__marker"
-                data-location="cork"
-                style="--x: 28%; --y: 53%;"
-                aria-label="Cork"
-              ></button>
-            </div>
           </div>
           <aside class="mapa__panel" id="mapa-panel" aria-live="polite">
             <p class="mapa__panel-hint">Selecciona Sevilla, Galway o Cork</p>
@@ -258,24 +247,88 @@
 
     <!-- 09 · PROYECTOS -->
     <section id="proyectos" class="scene scene--proyectos" aria-labelledby="proyectos-title">
-      <div class="scene__inner">
+      <div class="scene__inner scene__inner--proyectos">
         <p class="script-label">ESCENA 09</p>
         <h2 id="proyectos-title" class="scene__title">Proyectos</h2>
-        <p class="scene__meta">
-          <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer">Ver todo en GitHub →</a>
+        <p class="proyectos__intro">
+          Todo público, sin login.
+          <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer">github.com/Sarajesko →</a>
         </p>
-        <div class="proyectos__grid">
-          <article class="proyecto-card">
+        <div class="proyectos__grid" id="proyectos-grid">
+          <article class="proyecto-card proyecto-card--featured">
+            <div class="proyecto-card__media">
+              <img
+                class="proyecto-card__img"
+                src="../assets/projects/manga-festival.png"
+                alt="Captura de Manga-festival-Web"
+                loading="lazy"
+                width="800"
+                height="450"
+              >
+              <div class="proyecto-card__thumb">Captura próximamente</div>
+            </div>
+            <p class="proyecto-card__badge">Destacado</p>
             <h3 class="proyecto-card__title">Manga-festival-Web</h3>
-            <p class="scene__placeholder">HTML · CSS · JS</p>
+            <p class="proyecto-card__desc">Web para festival de manga: validación de datos y navegación multipágina.</p>
+            <div class="proyecto-card__tags">
+              <span class="stack__tag">HTML</span>
+              <span class="stack__tag">CSS</span>
+              <span class="stack__tag">JavaScript</span>
+            </div>
+            <a
+              class="proyecto-card__link"
+              href="https://github.com/Sarajesko/Manga-festival-Web"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Ver en GitHub</a>
           </article>
           <article class="proyecto-card">
+            <div class="proyecto-card__media">
+              <img
+                class="proyecto-card__img"
+                src="../assets/projects/validacion-php.png"
+                alt="Captura de Validación PHP"
+                loading="lazy"
+                width="800"
+                height="450"
+              >
+              <div class="proyecto-card__thumb proyecto-card__thumb--php">Captura próximamente</div>
+            </div>
             <h3 class="proyecto-card__title">Validación PHP</h3>
-            <p class="scene__placeholder">PHP</p>
+            <p class="proyecto-card__desc">Ejercicio de validación de formularios en PHP.</p>
+            <div class="proyecto-card__tags">
+              <span class="stack__tag">PHP</span>
+            </div>
+            <a
+              class="proyecto-card__link"
+              href="https://github.com/Sarajesko/Validaci-n-PHP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Ver en GitHub</a>
           </article>
           <article class="proyecto-card">
+            <div class="proyecto-card__media">
+              <img
+                class="proyecto-card__img"
+                src="../assets/projects/ev-pablo.png"
+                alt="Captura de EV Pablo García"
+                loading="lazy"
+                width="800"
+                height="450"
+              >
+              <div class="proyecto-card__thumb proyecto-card__thumb--php">Captura próximamente</div>
+            </div>
             <h3 class="proyecto-card__title">EV Pablo García</h3>
-            <p class="scene__placeholder">PHP</p>
+            <p class="proyecto-card__desc">Ejercicio de validación — entrega evaluable DAW.</p>
+            <div class="proyecto-card__tags">
+              <span class="stack__tag">PHP</span>
+            </div>
+            <a
+              class="proyecto-card__link"
+              href="https://github.com/Sarajesko/EV_Pablo_GarciaMarquez"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Ver en GitHub</a>
           </article>
         </div>
       </div>
@@ -283,44 +336,73 @@
 
     <!-- 10 · STACK -->
     <section id="stack" class="scene scene--stack" aria-labelledby="stack-title">
-      <div class="scene__inner">
+      <div class="scene__inner scene__inner--stack">
         <p class="script-label">ESCENA 10</p>
-        <h2 id="stack-title" class="scene__title">Stack</h2>
+        <h2 id="stack-title" class="scene__title">Stack &amp; habilidades</h2>
+        <p class="stack__intro">Lo que uso en DAW, en la beca Erasmus+ y en Multiplicalia.</p>
         <div class="stack__groups">
-          <div>
+          <div class="stack__group">
             <h3 class="stack__group-title">Frontend</h3>
             <div class="stack__tags">
               <span class="stack__tag">HTML</span>
               <span class="stack__tag">CSS</span>
               <span class="stack__tag">JavaScript</span>
+              <span class="stack__tag">Responsive</span>
             </div>
           </div>
-          <div>
+          <div class="stack__group">
             <h3 class="stack__group-title">Backend</h3>
             <div class="stack__tags">
               <span class="stack__tag">Python</span>
-              <span class="stack__tag">Flask</span>
+              <span class="stack__tag">FastAPI</span>
+              <span class="stack__tag">PHP</span>
               <span class="stack__tag">SQLite</span>
+              <span class="stack__tag">SQL</span>
             </div>
           </div>
-          <div>
-            <h3 class="stack__group-title">Otros</h3>
+          <div class="stack__group">
+            <h3 class="stack__group-title">CMS &amp; SEO</h3>
             <div class="stack__tags">
               <span class="stack__tag">WordPress</span>
-              <span class="stack__tag">SEO</span>
+              <span class="stack__tag">Elementor</span>
+              <span class="stack__tag">SEO técnico</span>
+              <span class="stack__tag">Analytics</span>
+            </div>
+          </div>
+          <div class="stack__group">
+            <h3 class="stack__group-title">Herramientas</h3>
+            <div class="stack__tags">
               <span class="stack__tag">Git</span>
+              <span class="stack__tag">GitHub</span>
+              <span class="stack__tag">Postman</span>
+              <span class="stack__tag">Search Console</span>
             </div>
           </div>
         </div>
+        <p class="stack__note">Formación DAW · Certificado IFCD0110 (9,04) · Inglés</p>
       </div>
     </section>
 
     <!-- 11 · CONTACTO -->
     <section id="contacto" class="scene scene--contacto" aria-labelledby="contacto-title">
-      <div class="scene__inner">
+      <div class="scene__inner scene__inner--contacto">
         <p class="script-label">ESCENA 11 · CONTACTO</p>
         <h2 id="contacto-title" class="scene__title">Contacto</h2>
-        <p class="scene__content">¿Prácticas DAW? ¿Colaboración? Escríbeme.</p>
+        <p class="contacto__lead">¿Prácticas DAW? ¿Colaboración? Escríbeme.</p>
+        <nav class="contacto__social" aria-label="Perfiles profesionales">
+          <a
+            class="contacto__social-link"
+            href="https://github.com/Sarajesko"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub</a>
+          <a
+            class="contacto__social-link"
+            href="https://www.linkedin.com/in/pablogarciamarquez"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn</a>
+        </nav>
         <form class="contacto__form" id="contact-form" novalidate>
           <div class="contacto__field">
             <label for="contact-name">Nombre</label>
@@ -351,30 +433,29 @@
           </div>
           <button type="submit" class="contacto__submit">Enviar</button>
         </form>
-        <p class="contacto__note">POST /api/contact — conectar en Fase 6</p>
-        <p class="site-footer__links" style="margin-top: var(--space-lg);">
-          <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <span aria-hidden="true">·</span>
-          <a href="https://www.linkedin.com/in/pablogarciamarquez" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </p>
+        <p class="contacto__status" id="contact-status" role="status" aria-live="polite" hidden></p>
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
+    <p class="site-footer__swipe-hint">Desliza ← → para cambiar escena</p>
     <p class="site-footer__nav-hint">
       <kbd>←</kbd> <kbd>→</kbd> teclado
     </p>
     <p class="site-footer__links">
-      <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Pablo García Márquez">GitHub</a>
       <span aria-hidden="true">·</span>
-      <a href="https://www.linkedin.com/in/pablogarciamarquez" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/pablogarciamarquez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pablo García Márquez">LinkedIn</a>
     </p>
     <p class="site-footer__cta">Busco prácticas DAW</p>
   </footer>
   <script src="js/scroll.js" defer></script>
   <script src="js/panels.js" defer></script>
   <script src="js/map.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/project-images.js" defer></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ Web personal con metáfora de guión (scroll lateral), mapa interactivo y backen
 | Capa | Tecnología |
 |------|------------|
 | Frontend público | HTML, CSS, JavaScript vanilla |
-| Backend | Python 3 + Flask |
+| Backend | Python 3 + FastAPI |
 | Base de datos | SQLite (SQL) |
 | Admin | Login solo Pablo — CRUD proyectos + ver mensajes |
 
@@ -28,7 +28,7 @@ pagina-web-pablo/
 │   ├── css/
 │   ├── js/
 │   └── admin/
-├── backend/             # API Flask + SQLite
+├── backend/             # API FastAPI + SQLite
 │   └── app/
 ├── assets/
 │   ├── logos/           # Ilerna, CORE, Multiplicalia, Fluid Financial
@@ -50,4 +50,6 @@ pagina-web-pablo/
 
 ## Estado
 
-En desarrollo — Fase 0 (preparación).
+En desarrollo — **Fase 6 completa** (API FastAPI + admin + tests). Siguiente: Fase 7 (pulido). Ver [`CHECKLIST.md`](CHECKLIST.md).
+
+Configuración API: copiar [`backend/.env.example`](backend/.env.example) → `backend/.env`.

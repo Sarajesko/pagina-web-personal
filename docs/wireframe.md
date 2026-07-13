@@ -214,7 +214,7 @@ Scroll llega aquí. **Clicks en mapa NO mueven el scroll.**
 │  ESCENA 10 · STACK                                                          │
 │                                                                             │
 │   Frontend          Backend           Otros                                 │
-│   HTML CSS JS       Python Flask      WordPress · SEO                       │
+│   HTML CSS JS       Python FastAPI    WordPress · SEO                       │
 │                     SQLite SQL        Git · Postman                         │
 │                                                                             │
 │   (Tags / chips visuales, no lista infinita)                                │

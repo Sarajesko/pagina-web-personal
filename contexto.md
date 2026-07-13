@@ -207,13 +207,13 @@ Sección **Contacto** con formulario real — no un simple `mailto:`. Debe dejar
 
 | Componente | Elección |
 |------------|----------|
-| **Python + Flask** | API REST, sesiones admin |
+| **Python + FastAPI** | API REST, sesiones admin, docs `/docs` |
 | **SQLite + SQL** | BD relacional sencilla (DAW-ready) |
 | **PHP** | Descartado para v1 |
 
 **Frontend:** HTML + CSS + JS vanilla (sin Angular).
 
-**Despliegue:** frontend estático (GitHub Pages / Netlify) + API Flask (Render, Railway, etc.). Variables sensibles en `.env`, **nunca** en el repo.
+**Despliegue:** frontend estático (GitHub Pages / Netlify) + API FastAPI (Render, Railway, etc.). Variables sensibles en `.env`, **nunca** en el repo. Pruebas API con **Postman** (`postman/`).
 
 ---
 
@@ -261,12 +261,12 @@ Prioridad: **simple y acorde a DAW**, con **backend + SQL + panel admin** visibl
 | **HTML** | Estructura semántica, formulario accesible, panel admin |
 | **CSS** | Layout horizontal, texturas, animaciones, mapa en relieve, responsive |
 | **JavaScript** | Scroll lateral, clicks, mapa, `fetch` a API pública y admin |
-| **Python + Flask** | API REST, auth admin, CRUD proyectos, contacto |
+| **Python + FastAPI** | API REST, auth admin, CRUD proyectos, contacto |
 | **SQLite / SQL** | Mensajes, proyectos, usuario admin |
 | **Postman** | Probar endpoints públicos y admin |
 | **TypeScript / Angular** | **No** en v1 |
 
-**Arquitectura v1:** frontend estático público + **API Flask + SQLite**. Proyectos servidos por API pero visibles sin login. Mapa en relieve: SVG topográfico de Europa.
+**Arquitectura v1:** frontend estático público + **API FastAPI + SQLite**. Proyectos servidos por API pero visibles sin login. Mapa en relieve: SVG topográfico de Europa.
 
 ---
 
@@ -317,7 +317,7 @@ Prioridad: **simple y acorde a DAW**, con **backend + SQL + panel admin** visibl
 - [x] SVG mapa Europa en relieve — `assets/maps/europe-relief.svg` (+ README atribución)
 - [ ] Cuenta/servicio SMTP *(opcional, fase posterior)*
 - [ ] Colección Postman del API de contacto
-- [ ] `.env.example` con variables documentadas (sin secretos reales)
+- [x] `.env.example` con variables documentadas (sin secretos reales)
 
 ### Favicon — pendiente, sin idea cerrada aún
 
@@ -376,7 +376,23 @@ Hace falta un favicon (icono de pestaña del navegador). **Todavía no hay conce
 17. ~~Fase 3 — trayectoria narrativa~~ ✓
 18. ~~Fase 4 — mapa interactivo~~ ✓
 19. ~~Fase 5.1 Sobre mí~~ ✓
-20. **Fase 5.2** — Proyectos *(siguiente)*
+20. ~~Fase 5.2 Proyectos~~ ✓
+21. ~~Fase 5.3 capturas (slots)~~ ✓ — añade PNG cuando puedas
+22. ~~Fase 5.4 Stack~~ ✓
+23. ~~Fase 5 — secciones finales~~ ✓
+24. ~~Fase 6.1 esquema SQLite~~ ✓
+25. ~~Fase 6.2 FastAPI app base~~ ✓ *(migrado de Flask)*
+26. ~~Fase 6.3 POST /api/contact~~ ✓
+27. ~~Fase 6.4 GET /api/projects~~ ✓
+28. ~~Fase 6.5 Auth admin login~~ ✓
+29. ~~Fase 6.6 CRUD admin proyectos~~ ✓
+30. ~~Fase 6.7 GET /api/admin/messages~~ ✓
+31. ~~Fase 6.8 formulario contacto frontend~~ ✓
+32. ~~Fase 6.9 panel admin frontend~~ ✓
+33. ~~Fase 6.10 .env.example + README~~ ✓
+34. ~~Fase 6.12 CORS + errores HTTP~~ ✓ — **Fase 6 completa**
+35. ~~Fase 7.1 Responsive~~ ✓
+36. **Fase 7.2** — Accesibilidad *(siguiente)*
 
 ---
 

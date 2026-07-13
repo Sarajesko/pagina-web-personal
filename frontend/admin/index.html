@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · Pablo García Márquez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="admin">
+    <header class="admin-header">
+      <div class="admin-header__brand">
+        <h1 class="admin-header__title">Panel admin</h1>
+        <p class="admin-header__sub">Portfolio · Pablo García Márquez</p>
+      </div>
+      <div class="admin-header__actions" id="admin-header-actions" hidden>
+        <span class="admin-header__user" id="admin-user"></span>
+        <button type="button" class="admin-btn admin-btn--ghost" id="admin-logout">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <p class="admin-banner admin-banner--error" id="admin-banner" role="alert" hidden></p>
+
+    <!-- Login -->
+    <section class="admin-panel" id="login-view">
+      <div class="admin-card admin-card--narrow">
+        <h2 class="admin-card__title">Acceso administrador</h2>
+        <form class="admin-form" id="login-form" novalidate>
+          <div class="admin-field">
+            <label for="login-username">Usuario</label>
+            <input type="text" id="login-username" name="username" autocomplete="username" required>
+          </div>
+          <div class="admin-field">
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+          </div>
+          <p class="admin-field-error" id="login-error" role="alert" hidden></p>
+          <button type="submit" class="admin-btn admin-btn--primary" id="login-submit">Entrar</button>
+        </form>
+        <p class="admin-hint"><a href="../index.html">← Volver al portfolio</a></p>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="admin-panel" id="dashboard-view" hidden>
+      <nav class="admin-tabs" aria-label="Secciones admin">
+        <button type="button" class="admin-tabs__btn admin-tabs__btn--active" data-tab="messages">Mensajes</button>
+        <button type="button" class="admin-tabs__btn" data-tab="projects">Proyectos</button>
+      </nav>
+
+      <!-- Mensajes -->
+      <div class="admin-tab-panel" id="tab-messages">
+        <div class="admin-toolbar">
+          <h2 class="admin-section-title">Mensajes de contacto</h2>
+          <button type="button" class="admin-btn admin-btn--ghost" id="refresh-messages">Actualizar</button>
+        </div>
+        <p class="admin-empty" id="messages-empty" hidden>No hay mensajes todavía.</p>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="messages-table" hidden>
+            <thead>
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Asunto</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="messages-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Proyectos -->
+      <div class="admin-tab-panel" id="tab-projects" hidden>
+        <div class="admin-toolbar">
+          <h2 class="admin-section-title">Proyectos</h2>
+          <button type="button" class="admin-btn admin-btn--primary" id="new-project">Nuevo proyecto</button>
+        </div>
+
+        <div class="admin-card admin-card--form" id="project-form-card" hidden>
+          <h3 class="admin-card__title" id="project-form-title">Nuevo proyecto</h3>
+          <form class="admin-form admin-form--grid" id="project-form">
+            <input type="hidden" id="project-id" name="id">
+            <div class="admin-field">
+              <label for="project-title">Título</label>
+              <input type="text" id="project-title" name="title" required>
+            </div>
+            <div class="admin-field">
+              <label for="project-github">URL GitHub</label>
+              <input type="url" id="project-github" name="github_url" required>
+            </div>
+            <div class="admin-field admin-field--full">
+              <label for="project-description">Descripción</label>
+              <textarea id="project-description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="admin-field">
+              <label for="project-stack">Stack (separado por comas)</label>
+              <input type="text" id="project-stack" name="stack" placeholder="HTML, CSS, JavaScript" required>
+            </div>
+            <div class="admin-field">
+              <label for="project-image">URL imagen</label>
+              <input type="text" id="project-image" name="image_url" placeholder="../assets/projects/ejemplo.png">
+            </div>
+            <div class="admin-field">
+              <label for="project-sort">Orden</label>
+              <input type="number" id="project-sort" name="sort_order" value="0" min="0">
+            </div>
+            <div class="admin-field admin-field--checkbox">
+              <label>
+                <input type="checkbox" id="project-featured" name="is_featured">
+                Destacado
+              </label>
+            </div>
+            <div class="admin-field admin-field--checkbox">
+              <label>
+                <input type="checkbox" id="project-published" name="is_published" checked>
+                Publicado
+              </label>
+            </div>
+            <p class="admin-field-error admin-field--full" id="project-form-error" role="alert" hidden></p>
+            <div class="admin-form__actions admin-field--full">
+              <button type="submit" class="admin-btn admin-btn--primary" id="project-submit">Guardar</button>
+              <button type="button" class="admin-btn admin-btn--ghost" id="project-cancel">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+        <p class="admin-empty" id="projects-empty" hidden>No hay proyectos.</p>
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="projects-table" hidden>
+            <thead>
+              <tr>
+                <th scope="col">Orden</th>
+                <th scope="col">Título</th>
+                <th scope="col">Stack</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="projects-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <dialog class="admin-dialog" id="message-dialog">
+    <form method="dialog" class="admin-dialog__inner">
+      <h3 class="admin-dialog__title" id="message-dialog-title">Mensaje</h3>
+      <dl class="admin-meta" id="message-dialog-meta"></dl>
+      <p class="admin-dialog__body" id="message-dialog-body"></p>
+      <div class="admin-dialog__actions">
+        <button type="button" class="admin-btn admin-btn--ghost" id="message-mark-read">Marcar leído</button>
+        <button type="submit" class="admin-btn admin-btn--primary">Cerrar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/admin.js" defer></script>
+</body>
+</html>

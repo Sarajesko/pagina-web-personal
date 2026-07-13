@@ -42,9 +42,14 @@ h1, h2, h3 {
   line-height: var(--leading-tight);
 }
 
-a:hover,
-a:focus-visible {
+a:not(.portada__cta):not(.daw__cta):not(.contacto__submit):not(.contacto__social-link):not(.scene-nav__link):hover,
+a:not(.portada__cta):not(.daw__cta):not(.contacto__submit):not(.contacto__social-link):not(.scene-nav__link):focus-visible {
   color: var(--color-accent);
+}
+
+a.portada__cta,
+a.portada__cta:visited {
+  text-decoration: none;
 }
 
 .scene__content a {

@@ -41,6 +41,17 @@
   var mapScene = document.getElementById("mapa");
   var mapSceneIndex = mapScene ? scenes.indexOf(mapScene) : -1;
 
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var touchStartTime = 0;
+  var minSwipeDistance = 48;
+  var maxSwipeTime = 600;
+
+  function isMapInteractiveTarget(el) {
+    if (!el || !el.closest) return false;
+    return !!el.closest(".mapa__figure, .mapa__markers, .mapa__marker, .mapa__panel, #mapa-panel");
+  }
+
   function sceneWidth() {
     return container.clientWidth;
   }
@@ -123,6 +134,47 @@
       }
     },
     { passive: false }
+  );
+
+  container.addEventListener(
+    "touchstart",
+    function (e) {
+      if (e.touches.length !== 1) return;
+      if (isFormField(e.target) || isMapInteractiveTarget(e.target)) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    },
+    { passive: true }
+  );
+
+  container.addEventListener(
+    "touchend",
+    function (e) {
+      if (scrollLock) return;
+      if (isFormField(e.target) || isMapInteractiveTarget(e.target)) return;
+
+      var touch = e.changedTouches[0];
+      if (!touch) return;
+
+      var dx = touch.clientX - touchStartX;
+      var dy = touch.clientY - touchStartY;
+      var elapsed = Date.now() - touchStartTime;
+
+      if (elapsed > maxSwipeTime) return;
+      if (Math.abs(dx) < minSwipeDistance) return;
+      if (Math.abs(dx) < Math.abs(dy) * 1.2) return;
+
+      var idx = currentIndex();
+      if (mapSceneIndex >= 0 && idx === mapSceneIndex) return;
+
+      if (dx < 0) {
+        goToScene(idx + 1);
+      } else {
+        goToScene(idx - 1);
+      }
+    },
+    { passive: true }
   );
 
   document.addEventListener("keydown", function (e) {

@@ -1,8 +1,18 @@
 # Mapa Europa — relieve
 
-## Archivo
+## Archivos
 
-- **`europe-relief.svg`** — mapa topográfico de Europa (relieve, sin fronteras políticas marcadas).
+- **`europe-relief.svg`** — mapa topográfico completo de Europa (relieve, sin fronteras políticas).
+
+## Marcadores (portfolio)
+
+Coordenadas en `frontend/js/map.js` (% sobre el mapa completo, extensión LAEA Wikimedia EPSG:3035):
+
+| Ciudad | x % | y % | Ubicación |
+|--------|-----|-----|-----------|
+| Sevilla | 7.2 | 90.6 | Suroeste península ibérica |
+| Galway | 10.5 | 47.8 | Costa oeste de Irlanda |
+| Cork | 10.7 | 51.6 | Sur de Irlanda |
 
 ## Origen y licencia
 
@@ -20,12 +30,10 @@ Usar en la web con crédito visible (footer o sección mapa). Adaptaciones (punt
 - Tamaño ~3 MB — aceptable para v1; en Fase 4 valorar simplificar paths o exportar versión optimizada para carga web.
 - Proyección LAEA (Lambert azimuthal equal-area), adecuada para colocar marcadores en Irlanda y sur de España.
 
-## Uso previsto (Fase 4)
+## Uso en la web
 
-Marcadores clickables:
+Marcadores clickables en escena 07:
 
 - **Sevilla** — Ilerna + Multiplicalia
 - **Galway** — beca Erasmus+
 - **Cork** — Fluid Financial LLC
-
-Coordenadas exactas de los puntos: definir en implementación JS (paso 4.2).
