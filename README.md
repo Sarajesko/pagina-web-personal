@@ -297,6 +297,8 @@ Arquitectura clara: modelos SQL · routers FastAPI · front estático.
 
 **Autor:** Pablo García Márquez ([@Sarajesko](https://github.com/Sarajesko)).
 
-© Pablo García Márquez. **Todos los derechos reservados.** Ver [`LICENSE`](LICENSE).
+© Pablo García Márquez. Ver [LICENSE](LICENSE).
 
-El código y el diseño se publican en GitHub para **mostrar el trabajo** (prácticas DAW / portfolio). No se concede permiso libre de copiar, modificar o redistribuir el proyecto sin autorización del autor.
+El código y el diseño se publican en GitHub para **mostrar el trabajo** (prácticas DAW / portfolio).  
+**Sí puedes redistribuir** el proyecto (p. ej. compartir el repo o una copia sin cambios), manteniendo la autoría de Pablo.  
+**No** está permitido modificarlo y presentarlo como propio, ni reutilizar partes sustanciales en otro portfolio/comercial, sin autorización del autor.
