@@ -3,11 +3,17 @@ Copyright (c) Pablo García Márquez. All rights reserved.
 This repository is published for portfolio and educational demonstration purposes
 (DAW internship applications and professional showcase).
 
-No license is granted to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of this software or its design, except with prior written
-permission from the author.
+You MAY redistribute this project (for example share the repository URL or an
+unmodified copy), provided that:
+  - authorship credit remains with Pablo García Márquez;
+  - the project is not presented as your own work.
 
-Viewing this repository on GitHub does not constitute a grant of rights.
+You may NOT, without prior written permission from the author:
+  - modify the code or design and redistribute those modified versions;
+  - use substantial parts of this work in another commercial or portfolio site
+    as if it were your own.
+
+Viewing this repository on GitHub does not grant broader rights than those above.
 
 Author: Pablo García Márquez
 GitHub: https://github.com/Sarajesko
