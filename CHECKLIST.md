@@ -143,7 +143,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 | 8.2 | Desplegar **API FastAPI + SQLite** (Render / Railway) | URL API + env vars | `[ ]` |
 | 8.3 | Conectar frontend con API producción | Formulario + proyectos en prod | `[ ]` |
 | 8.4 | Enlazar web desde **LinkedIn** | Perfil actualizado | `[ ]` |
-| 8.5 | README final — local, BD, admin, despliegue | Documentación DAW-ready | `[ ]` |
+| 8.5 | README final — local, BD, admin, despliegue | Documentación DAW-ready | `[x]` |
 
 **Validación fase 8:** web live; formulario y proyectos en producción.
 
