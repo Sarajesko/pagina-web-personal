@@ -2,9 +2,10 @@
 
 Web personal / portfolio con metáfora de **guión** (scroll lateral por escenas), mapa interactivo de Europa y backend full stack.
 
+**Autor:** Pablo García Márquez  
 **Repositorio:** [github.com/Sarajesko/pagina-web-personal](https://github.com/Sarajesko/pagina-web-personal)  
 **LinkedIn:** [linkedin.com/in/pablogarciamarquez](https://www.linkedin.com/in/pablogarciamarquez)  
-**Demo online:** pendiente (Fase 8 — GitHub Pages / Render)
+**Demo online:** pendiente (GitHub Pages / Render)
 
 ---
 
@@ -24,8 +25,8 @@ Web personal / portfolio con metáfora de **guión** (scroll lateral por escenas
 12. [Postman](#postman)
 13. [Stack y arquitectura](#stack-y-arquitectura)
 14. [Solución de problemas](#solución-de-problemas)
-15. [Roadmap](#roadmap)
-16. [Documentación interna](#documentación-interna)
+15. [Próximos pasos](#próximos-pasos)
+16. [Autor y derechos](#autor-y-derechos)
 
 ---
 
@@ -58,8 +59,8 @@ Portfolio con personalidad para **prácticas del módulo superior DAW**, sin esc
 | Panel admin (mensajes + proyectos) | Listo |
 | Tests de integración API (`13/13`) | Listo |
 | Colección Postman | Listo |
-| Accesibilidad / favicon / Open Graph | En curso (Fase 7) |
-| Deploy público (front + API) | Pendiente (Fase 8) |
+| Accesibilidad / favicon / Open Graph | En curso |
+| Deploy público (front + API) | Pendiente |
 
 ---
 
@@ -86,8 +87,6 @@ pagina-web-personal/
 ├── content/                  Textos (mapa, copy)
 ├── docs/                     Wireframe, design tokens
 ├── postman/                  Colección API
-├── contexto.md               Brief creativo y técnico
-├── CHECKLIST.md              Plan por fases
 └── README.md
 ```
 
@@ -96,8 +95,8 @@ pagina-web-personal/
 | `frontend/` | View pública + admin |
 | `backend/` | API FastAPI + SQLite |
 | `assets/` | Logos, mapa, capturas |
-| `contexto.md` | Identidad, narrativa, criterios |
-| `CHECKLIST.md` | Pasos y estado del desarrollo |
+| `docs/` | Diseño y wireframe |
+| `postman/` | Colección para probar la API |
 
 ---
 
@@ -270,7 +269,7 @@ Importa [`postman/portfolio-api.postman_collection.json`](postman/portfolio-api.
 | Controller | FastAPI · validación · sesión cookie |
 | Model | SQLite (SQL) |
 
-Arquitectura clara **MVC-ish**: modelos SQL · routers FastAPI · front estático.
+Arquitectura clara: modelos SQL · routers FastAPI · front estático.
 
 ---
 
@@ -286,29 +285,18 @@ Arquitectura clara **MVC-ish**: modelos SQL · routers FastAPI · front estátic
 
 ---
 
-## Roadmap
+## Próximos pasos
 
-- Fase 7: accesibilidad, favicon, meta Open Graph / SEO, copy.
-- Fase 8: deploy front (Pages/Netlify) + API (Render/Railway) + enlace en LinkedIn.
-- Incluir **Cinebook** y otros repos como proyectos destacados con demo en vivo.
-
-Plan detallado: [`CHECKLIST.md`](CHECKLIST.md).
+- Pulido: accesibilidad, favicon, meta Open Graph / SEO.
+- Publicar front + API y enlazar desde LinkedIn.
+- Destacar proyectos con demo en vivo (p. ej. Cinebook).
 
 ---
 
-## Documentación interna
+## Autor y derechos
 
-| Archivo | Contenido |
-|---------|-----------|
-| [`contexto.md`](contexto.md) | Identidad, narrativa, stack, criterios de éxito |
-| [`CHECKLIST.md`](CHECKLIST.md) | Fases 0–8 y validaciones |
-| [`backend/README.md`](backend/README.md) | Detalle de la API |
-| [`docs/wireframe.md`](docs/wireframe.md) | Escenas |
-| [`docs/design-tokens.md`](docs/design-tokens.md) | Paleta y tipografías |
+**Autor:** Pablo García Márquez ([@Sarajesko](https://github.com/Sarajesko)).
 
----
+© Pablo García Márquez. Todos los derechos reservados, salvo que se indique otra licencia en un archivo `LICENSE` del repositorio.
 
-## Estado
-
-**Fase 6 completa** (API + admin + tests).  
-**Siguiente:** Fase 7 (pulido) → Fase 8 (publicación).
+El código y el diseño de esta web personal se publican en GitHub para **mostrar el trabajo** (prácticas DAW / portfolio). No implica permiso libre de copiar, modificar o redistribuir el proyecto entero sin autorización del autor.
