@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: pagina-web-pablo-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: ENV
+        value: production
+      - key: SERVE_FRONTEND
+        value: "true"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        value: PabloAdmin2026!
+      - key: CORS_ORIGINS
+        value: https://sarajesko.github.io,https://pagina-web-pablo-api.onrender.com
+      - key: SESSION_SAME_SITE
+        value: none
+      - key: SESSION_HTTPS_ONLY
+        value: "true"

@@ -1,9 +1,10 @@
 /**
  * Entrada única de estilos — Pablo García Márquez portfolio
  * Orden: tokens → base → escenas → responsive (+ portada.css en index.html)
+ * ?v= en imports: el navegador cachea @import aparte del main.css
  */
 
-@import url("tokens.css");
-@import url("base.css");
-@import url("scenes.css");
-@import url("responsive.css");
+@import url("tokens.css?v=59");
+@import url("base.css?v=59");
+@import url("scenes.css?v=59");
+@import url("responsive.css?v=59");

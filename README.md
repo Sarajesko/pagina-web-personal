@@ -5,10 +5,31 @@ Web personal / portfolio con metáfora de **guión** (**5 escenas**, scroll late
 **Autor:** Pablo García Márquez  
 **Repositorio:** [github.com/Sarajesko/pagina-web-personal](https://github.com/Sarajesko/pagina-web-personal)  
 **LinkedIn:** [linkedin.com/in/pablogarciamarquez](https://www.linkedin.com/in/pablogarciamarquez)  
-**Demo online:** [sarajesko.github.io/pagina-web-personal/frontend](https://sarajesko.github.io/pagina-web-personal/frontend/)
+**Demo online (estático):** [sarajesko.github.io/pagina-web-personal/frontend](https://sarajesko.github.io/pagina-web-personal/frontend/)  
+**Demo full stack (contacto + admin):** `https://pagina-web-pablo-api.onrender.com/frontend/` *(tras desplegar el Blueprint — ver [Deploy en Render](#deploy-en-render))*
 
 ---
 
+## Deploy en Render
+
+Un solo servicio Docker sirve **API + frontend + admin** (mismo origen → cookies OK).
+
+1. Sube este repo a GitHub (ya está en `Sarajesko/pagina-web-personal`).
+2. En [Render](https://dashboard.render.com) → **New** → **Blueprint** → conecta el repo → usa `render.yaml`.
+3. O **New Web Service** → Docker → root del repo → el `Dockerfile` ya está listo.
+4. Variables importantes (también en `render.yaml`):
+   - `ADMIN_USERNAME` / `ADMIN_PASSWORD`
+   - `CORS_ORIGINS` = `https://sarajesko.github.io,https://pagina-web-pablo-api.onrender.com` (ajusta el nombre del servicio)
+   - `SESSION_SAME_SITE=none` + `SESSION_HTTPS_ONLY=true` (Pages ↔ API)
+5. URLs tras el deploy:
+   - Portfolio: `https://<servicio>.onrender.com/frontend/`
+   - Admin: `https://<servicio>.onrender.com/frontend/admin/`
+   - Health: `https://<servicio>.onrender.com/api/health`
+6. Si el nombre del servicio no es `pagina-web-pablo-api`, actualiza `PRODUCTION_API` en `frontend/js/config.js` y `CORS_ORIGINS`.
+
+El plan free de Render **se duerme** tras inactividad; el primer request puede tardar ~30–60 s.
+
+---
 ## Índice
 
 1. [Capturas de pantalla](#capturas-de-pantalla)

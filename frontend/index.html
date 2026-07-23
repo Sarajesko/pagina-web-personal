@@ -12,8 +12,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=39">
-  <link rel="stylesheet" href="css/portada.css?v=39">
+  <link rel="stylesheet" href="css/main.css?v=59">
+  <link rel="stylesheet" href="css/portada.css?v=59">
+  <style>
+    /* Cache-proof: Limerick = otros datos de interés */
+    .mapa__marker--interest,
+    .mapa__marker[data-location="limerick"] {
+      background: #e8e4dc !important;
+      background-color: #e8e4dc !important;
+      border-color: #e63946 !important;
+      box-shadow: 0 0 0 2px rgba(12, 12, 14, 0.85), 0 0 10px rgba(232, 228, 220, 0.4) !important;
+      animation: none !important;
+    }
+  </style>
+  <script src="js/config.js?v=1"></script>
 </head>
 <body>
   <div class="texture-layer" aria-hidden="true"></div>
@@ -112,12 +124,12 @@
     <section id="mapa" class="scene scene--mapa" aria-labelledby="mapa-title">
       <div class="scene__inner scene__inner--mapa">
         <p class="script-label">INT. MAPA — TRAYECTORIA — DÍA</p>
-        <h2 id="mapa-title" class="scene__title">Por qué yo</h2>
+        <h2 id="mapa-title" class="scene__title">Por qué yo, mi viaje profesional</h2>
         <p class="mapa__intro">
-          Click en un punto — el recorrido es el currículum.
+          Pulsa un punto del mapa — el recorrido es el currículum.
           Usa <kbd>←</kbd> <kbd>→</kbd> para seguir el guión.
         </p>
-        <div class="mapa__layout">
+        <div class="mapa__layout" id="mapa-layout">
           <div class="mapa__wrap">
             <figure class="mapa__figure">
               <img
@@ -127,16 +139,26 @@
                 width="680"
                 height="566"
               >
+              <svg class="mapa__routes" aria-hidden="true"></svg>
               <div class="mapa__markers" aria-hidden="false">
-                <button type="button" class="mapa__marker" data-location="sevilla" aria-label="Sevilla"></button>
-                <button type="button" class="mapa__marker" data-location="galway" aria-label="Galway"></button>
-                <button type="button" class="mapa__marker" data-location="cork" aria-label="Cork"></button>
+                <button type="button" class="mapa__marker mapa__marker--pulse" data-location="sevilla" aria-label="Sevilla"></button>
+                <button type="button" class="mapa__marker mapa__marker--pulse" data-location="logrono" aria-label="Logroño"></button>
+                <button type="button" class="mapa__marker mapa__marker--pulse" data-location="galway" aria-label="Galway"></button>
+                <button type="button" class="mapa__marker mapa__marker--interest" data-location="limerick" aria-label="Limerick" style="background:#e8e4dc;background-color:#e8e4dc;border-color:#e63946;box-shadow:0 0 0 2px rgba(12,12,14,0.85),0 0 10px rgba(232,228,220,0.4)"></button>
               </div>
+              <ul class="mapa__legend" aria-label="Leyenda del mapa">
+                <li class="mapa__legend-item">
+                  <span class="mapa__legend-dot" aria-hidden="true"></span>
+                  <span>Viaje del programador</span>
+                </li>
+                <li class="mapa__legend-item">
+                  <span class="mapa__legend-dot mapa__legend-dot--interest" aria-hidden="true"></span>
+                  <span>Otros datos de interés</span>
+                </li>
+              </ul>
             </figure>
           </div>
-          <aside class="mapa__panel" id="mapa-panel" aria-live="polite">
-            <p class="mapa__panel-hint">Selecciona Sevilla, Galway o Cork</p>
-          </aside>
+          <aside class="mapa__panel" id="mapa-panel" hidden aria-live="polite"></aside>
         </div>
         <p class="mapa__credit">
           Mapa © <a href="https://commons.wikimedia.org/wiki/File:Europe_laea_topography.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> (CC BY-SA 4.0)
@@ -343,9 +365,9 @@
     </p>
   </footer>
   <script src="js/scroll.js?v=23" defer></script>
-  <script src="js/map.js" defer></script>
-  <script src="js/contact.js" defer></script>
-  <script src="js/projects.js?v=36" defer></script>
+  <script src="js/map.js?v=59" defer></script>
+  <script src="js/contact.js?v=59" defer></script>
+  <script src="js/projects.js?v=59" defer></script>
   <script src="js/project-images.js" defer></script>
 </body>
 </html>
