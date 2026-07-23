@@ -1,6 +1,6 @@
 # Página web personal — Pablo García Márquez
 
-Web personal / portfolio con metáfora de **guión** (scroll lateral por escenas), mapa interactivo de Europa y backend full stack.
+Web personal / portfolio con metáfora de **guión** (5 escenas, scroll lateral), mapa = currículum, y backend full stack.
 
 **Autor:** Pablo García Márquez  
 **Repositorio:** [github.com/Sarajesko/pagina-web-personal](https://github.com/Sarajesko/pagina-web-personal)  

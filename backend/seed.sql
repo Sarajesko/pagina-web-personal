@@ -4,31 +4,31 @@
 INSERT INTO projects (title, description, stack, github_url, image_url, is_featured, sort_order, is_published)
 VALUES
 (
-    'Manga-festival-Web',
-    'Web para festival de manga: validación de datos y navegación multipágina.',
-    'HTML,CSS,JavaScript',
-    'https://github.com/Sarajesko/Manga-festival-Web',
-    '../assets/projects/manga-festival.png',
+    'Cinebook',
+    'Catálogo de libros de cine: inventario, ISBN, wishlist y estadísticas. Demo: https://cinebook-o4t3.onrender.com',
+    'Angular,NestJS,TypeScript',
+    'https://github.com/Sarajesko/Cinebook',
+    '',
     1,
     1,
     1
 ),
 (
-    'Validación PHP',
-    'Ejercicio de validación de formularios en PHP.',
-    'PHP',
-    'https://github.com/Sarajesko/Validaci-n-PHP',
-    '../assets/projects/validacion-php.png',
-    0,
+    'rag-agent-azure',
+    'API FastAPI con agente RAG, Azure SQL, Docker y despliegue en Azure Container Apps con CI/CD.',
+    'Python,FastAPI,Azure,Docker',
+    'https://github.com/Sarajesko/rag-agent-azure',
+    '',
+    1,
     2,
     1
 ),
 (
-    'EV Pablo García',
-    'Ejercicio de validación — entrega evaluable DAW.',
-    'PHP',
-    'https://github.com/Sarajesko/EV_Pablo_GarciaMarquez',
-    '../assets/projects/ev-pablo.png',
+    'Manga-festival-Web',
+    'Mini sitio del Festival Manga Core 2026: HTML, CSS y JavaScript con reserva de bono validada.',
+    'HTML,CSS,JavaScript',
+    'https://github.com/Sarajesko/Manga-festival-Web',
+    '../assets/projects/manga-festival.png',
     0,
     3,
     1

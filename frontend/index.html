@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Pablo García Márquez — Desarrollador full stack · Ex-guionista. Portfolio personal.">
-  <title>Pablo García Márquez · Portfolio</title>
+  <meta name="description" content="Pablo García Márquez — Desarrollador full stack. Busco prácticas DAW.">
+  <title>Pablo García Márquez · Busco prácticas DAW</title>
+  <link rel="icon" href="../assets/favicon/favicon.svg?v=5" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon/favicon.ico?v=5" sizes="any">
+  <link rel="icon" href="../assets/favicon/favicon-32.png?v=5" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=3">
-  <link rel="stylesheet" href="css/portada.css?v=4">
+  <link rel="stylesheet" href="css/main.css?v=35">
+  <link rel="stylesheet" href="css/portada.css?v=35">
 </head>
 <body>
   <div class="texture-layer" aria-hidden="true"></div>
@@ -17,27 +21,25 @@
 
   <header class="site-header">
     <p class="site-header__brand">
-      <span class="site-header__initials">PG</span>
+      <span class="site-header__mark" aria-label="PG">
+        <span class="site-header__bracket" aria-hidden="true">&lt;</span>
+        <span class="site-header__initials">PG</span>
+        <span class="site-header__bracket" aria-hidden="true">/&gt;</span>
+      </span>
       <span class="site-header__role">Dev full stack</span>
     </p>
     <p class="scene-indicator" id="scene-indicator" aria-live="polite">
-      <span class="scene-indicator__page">Pág. <span id="scene-current">01</span>/<span id="scene-total">11</span></span>
+      <span class="scene-indicator__page">Pág. <span id="scene-current">01</span>/<span id="scene-total">05</span></span>
       <span class="scene-indicator__sep" aria-hidden="true">·</span>
-      <span class="scene-indicator__title" id="scene-title">FADE IN</span>
+      <span class="scene-indicator__title" id="scene-title">PORTADA</span>
     </p>
     <nav class="scene-nav" aria-label="Escenas del guión">
       <ol class="scene-nav__list">
         <li><a href="#portada" class="scene-nav__link scene-nav__link--active" aria-current="page"><span class="scene-nav__num">01</span></a></li>
-        <li><a href="#guion" class="scene-nav__link"><span class="scene-nav__num">02</span></a></li>
-        <li><a href="#daw" class="scene-nav__link"><span class="scene-nav__num">03</span></a></li>
-        <li><a href="#core" class="scene-nav__link"><span class="scene-nav__num">04</span></a></li>
-        <li><a href="#multiplicalia" class="scene-nav__link"><span class="scene-nav__num">05</span></a></li>
-        <li><a href="#erasmus" class="scene-nav__link"><span class="scene-nav__num">06</span></a></li>
-        <li><a href="#mapa" class="scene-nav__link"><span class="scene-nav__num">07</span></a></li>
-        <li><a href="#sobre-mi" class="scene-nav__link"><span class="scene-nav__num">08</span></a></li>
-        <li><a href="#proyectos" class="scene-nav__link"><span class="scene-nav__num">09</span></a></li>
-        <li><a href="#stack" class="scene-nav__link"><span class="scene-nav__num">10</span></a></li>
-        <li><a href="#contacto" class="scene-nav__link"><span class="scene-nav__num">11</span></a></li>
+        <li><a href="#mapa" class="scene-nav__link"><span class="scene-nav__num">02</span></a></li>
+        <li><a href="#este-proyecto" class="scene-nav__link"><span class="scene-nav__num">03</span></a></li>
+        <li><a href="#proyectos" class="scene-nav__link"><span class="scene-nav__num">04</span></a></li>
+        <li><a href="#contacto" class="scene-nav__link"><span class="scene-nav__num">05</span></a></li>
       </ol>
     </nav>
   </header>
@@ -47,163 +49,74 @@
     <!-- 01 · PORTADA -->
     <section id="portada" class="scene scene--portada" aria-labelledby="portada-title">
       <div class="scene__inner scene__inner--portada">
-        <p class="script-label">FADE IN:</p>
+        <p class="script-label">INT. PORTADA — CURRÍCULUM PABLO — DÍA</p>
         <h1 id="portada-title" class="portada__title">Pablo García Márquez</h1>
         <p class="portada__subtitle">Desarrollador full stack · Ex-guionista</p>
-        <a href="#contacto" class="portada__cta">Contacto</a>
+        <p class="portada__tagline">«Antes escribía guiones. Ahora construyo historias en código.»</p>
+        <p class="portada__ask">Busco prácticas DAW</p>
+        <div class="portada__proof">
+          <p class="portada__proof-label">Experiencia previa</p>
+          <ul class="portada__logos">
+            <li class="portada__logo-item">
+              <a
+                class="portada__logo-link"
+                href="https://multiplicalia.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="portada__logo portada__logo--multiplicalia"
+                  src="../assets/logos/multiplicalia.jpg"
+                  alt="Multiplicalia"
+                  width="72"
+                  height="72"
+                >
+              </a>
+              <span class="portada__logo-meta">Multiplicalia <span class="portada__logo-place">(Sevilla)</span></span>
+            </li>
+            <li class="portada__logo-item">
+              <a
+                class="portada__logo-link"
+                href="https://fluid.financial/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="portada__logo portada__logo--fluid"
+                  src="../assets/logos/fluid-financial.jpg"
+                  alt="Fluid Financial LLC"
+                  width="200"
+                  height="52"
+                >
+              </a>
+              <span class="portada__logo-meta">Fluid Financial <span class="portada__logo-place">(Irlanda)</span></span>
+            </li>
+          </ul>
+        </div>
+        <div class="portada__actions">
+          <a href="#contacto" class="portada__cta">Contactar</a>
+          <a
+            class="portada__cta portada__cta--secondary"
+            href="../assets/cv/CV_Pablo_Garcia_Marquez_FullStack.pdf"
+            download="CV_Pablo_Garcia_Marquez_FullStack.pdf"
+          >Descargar CV</a>
+        </div>
         <p class="portada__hint">
           <span class="portada__hint-arrow" aria-hidden="true">→</span>
-          scroll para empezar
+          scroll para el mapa
         </p>
       </div>
     </section>
 
-    <!-- 02 · EL GUIÓN -->
-    <section id="guion" class="scene scene--guion" aria-labelledby="guion-title">
-      <div class="scene__inner scene__inner--guion">
-        <p class="script-label">INT. WEB — DÍA</p>
-        <h2 id="guion-title" class="scene__title">El guión</h2>
-        <blockquote class="guion__lead">
-          Esta no es una web que se lee de arriba abajo. Es un guión: avanzas escena a escena.
-        </blockquote>
-        <ul class="scene__list guion__beats">
-          <li>Scroll lateral — pasar página</li>
-          <li>Mapa — viaje Sevilla → Irlanda</li>
-          <li>Todo público — proyectos incluidos</li>
-        </ul>
-        <p class="guion__aside">Antes escribía historias. Ahora las construyo en código.</p>
-      </div>
-    </section>
-
-    <!-- 03 · DAW ILERNA -->
-    <section id="daw" class="scene scene--daw" aria-labelledby="daw-title">
-      <div class="scene__inner scene__inner--daw">
-        <p class="script-label">ESCENA 03 · SEVILLA</p>
-        <img class="scene__logo scene__logo--ilerna" src="../assets/logos/ilerna.jpg" alt="Ilerna" width="80" height="80">
-        <h2 id="daw-title" class="scene__title">DAW — Ilerna</h2>
-        <p class="scene__meta">Desarrollo de Aplicaciones Web · Sevilla · terminando ciclo</p>
-        <p class="daw__lead">Formación full stack: frontend, backend, bases de datos y despliegue.</p>
-        <p class="daw__highlight">
-          <strong>Busco prácticas del módulo superior.</strong>
-          Si tienes empresa o conoces a alguien — hablemos.
-        </p>
-        <div class="daw__stack">
-          <span class="stack__tag">HTML</span>
-          <span class="stack__tag">CSS</span>
-          <span class="stack__tag">JavaScript</span>
-          <span class="stack__tag">Python</span>
-          <span class="stack__tag">SQL</span>
-        </div>
-        <a href="#contacto" class="daw__cta">Contactar — prácticas DAW</a>
-      </div>
-    </section>
-
-    <!-- 04 · CORE NETWORKS -->
-    <section id="core" class="scene scene--core" aria-labelledby="core-title">
-      <div class="scene__inner scene__inner--core">
-        <p class="script-label">ESCENA 04 · FORMACIÓN</p>
-        <img class="scene__logo scene__logo--core" src="../assets/logos/core-networks.png" alt="CORE Networks" width="160" height="48">
-        <h2 id="core-title" class="scene__title">Certificado IFCD0110</h2>
-        <p class="scene__meta">Confección y Publicación de Páginas Web · CORE Networks · Junta de Andalucía</p>
-        <dl class="core__facts">
-          <div class="core__fact">
-            <dt>Periodo</dt>
-            <dd>oct 2025 – abr 2026</dd>
-          </div>
-          <div class="core__fact">
-            <dt>Horas</dt>
-            <dd>560 h · nivel 2</dd>
-          </div>
-          <div class="core__fact core__fact--grade">
-            <dt>Nota</dt>
-            <dd>9,04</dd>
-          </div>
-        </dl>
-        <ul class="scene__list core__skills">
-          <li>HTML, CSS, JavaScript</li>
-          <li>Formularios e integración de componentes</li>
-          <li>Pruebas y publicación web</li>
-        </ul>
-        <p class="core__note">Curso del paro que abrió la puerta a prácticas en empresa.</p>
-      </div>
-    </section>
-
-    <!-- 05 · MULTIPLICALIA -->
-    <section id="multiplicalia" class="scene scene--multiplicalia" aria-labelledby="multiplicalia-title">
-      <div class="scene__inner scene__inner--multiplicalia">
-        <p class="script-label">ESCENA 05 · PRÁCTICAS</p>
-        <img class="scene__logo scene__logo--multiplicalia" src="../assets/logos/multiplicalia.jpg" alt="Multiplicalia" width="80" height="80">
-        <h2 id="multiplicalia-title" class="scene__title">Multiplicalia</h2>
-        <p class="scene__meta">Desarrollador web · IFCD0110 · feb – mar 2026 · Sevilla · Híbrido</p>
-        <p class="scene__content">WordPress · SEO · UX — prácticas del curso del paro, no del módulo DAW.</p>
-        <button
-          type="button"
-          class="scene-panel__toggle"
-          data-panel="multiplicalia-detail"
-          aria-expanded="false"
-          aria-controls="multiplicalia-detail"
-        >+ Ver detalle</button>
-        <aside id="multiplicalia-detail" class="scene-panel" hidden aria-label="Detalle Multiplicalia">
-          <h3 class="scene-panel__title">Tareas</h3>
-          <ul class="scene__list">
-            <li>WordPress con Elementor y WPBakery</li>
-            <li>Diseño, estructura y UX de páginas</li>
-            <li>SEO técnico y de contenidos</li>
-            <li>Analytics, Search Console, Screaming Frog, SEMrush</li>
-            <li>Mantenimiento de plugins e incidencias</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <!-- 06 · ERASMUS+ -->
-    <section id="erasmus" class="scene scene--erasmus" aria-labelledby="erasmus-title">
-      <div class="scene__inner scene__inner--erasmus">
-        <p class="script-label">ESCENA 06 · IRLANDA</p>
-        <img class="scene__logo scene__logo--fluid" src="../assets/logos/fluid-financial.jpg" alt="Fluid Financial" width="140" height="48">
-        <h2 id="erasmus-title" class="scene__title">Erasmus+ · Fluid Financial</h2>
-        <p class="scene__meta">Desarrollador full stack · Beca UE · jun 2026 – actualidad</p>
-        <div class="erasmus__locations">
-          <div class="erasmus__location">
-            <span class="erasmus__pin" aria-hidden="true">●</span>
-            <div>
-              <strong>Galway</strong>
-              <p>Donde resido durante la beca</p>
-            </div>
-          </div>
-          <div class="erasmus__location">
-            <span class="erasmus__pin erasmus__pin--corp" aria-hidden="true">●</span>
-            <div>
-              <strong>Cork</strong>
-              <p>Sede Fluid Financial · remoto</p>
-            </div>
-          </div>
-        </div>
-        <button
-          type="button"
-          class="scene-panel__toggle"
-          data-panel="erasmus-detail"
-          aria-expanded="false"
-          aria-controls="erasmus-detail"
-        >+ Ver detalle</button>
-        <aside id="erasmus-detail" class="scene-panel" hidden aria-label="Detalle Erasmus+">
-          <h3 class="scene-panel__title">Beca Erasmus+</h3>
-          <ul class="scene__list">
-            <li>Fluid Financial LLC — fintech, full stack</li>
-            <li>Contrato de prácticas con beca de la Unión Europea</li>
-            <li>Trabajo en remoto desde Galway</li>
-            <li>Empresa con sede en Cork, Condado de Cork</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <!-- 07 · MAPA -->
+    <!-- 02 · MAPA = CURRÍCULUM -->
     <section id="mapa" class="scene scene--mapa" aria-labelledby="mapa-title">
       <div class="scene__inner scene__inner--mapa">
-        <p class="script-label">ESCENA 07 · MAPA</p>
-        <h2 id="mapa-title" class="scene__title">Mapa del viaje</h2>
-        <p class="mapa__intro">Click en un punto — el scroll se queda aquí. Usa ← → para seguir.</p>
+        <p class="script-label">INT. MAPA — TRAYECTORIA — DÍA</p>
+        <h2 id="mapa-title" class="scene__title">Por qué yo</h2>
+        <p class="mapa__intro">
+          Click en un punto — el recorrido es el currículum.
+          Usa <kbd>←</kbd> <kbd>→</kbd> para seguir el guión.
+        </p>
         <div class="mapa__layout">
           <div class="mapa__wrap">
             <figure class="mapa__figure">
@@ -231,164 +144,98 @@
       </div>
     </section>
 
-    <!-- 08 · SOBRE MÍ -->
-    <section id="sobre-mi" class="scene scene--sobre-mi" aria-labelledby="sobre-mi-title">
-      <div class="scene__inner scene__inner--sobre-mi">
-        <p class="script-label">ESCENA 08</p>
-        <h2 id="sobre-mi-title" class="scene__title">Sobre mí</h2>
-        <div class="sobre-mi__content">
-          <p class="sobre-mi__lead">Pasé del guión al código. Antes escribía historias; ahora las construyo.</p>
-          <p>Por el camino trabajé en Lisboa, donde empecé a enamorarme de la programación; aprendí inglés en Irlanda y, de regreso a Sevilla, lideré un equipo en atención al cliente del sector aéreo.</p>
-          <p>Soy desarrollador full stack con formación DAW. Actualmente otra vez en Irlanda con una beca Erasmus+ de la Unión Europea.</p>
-          <p class="sobre-mi__closing">No estoy empezando de cero: estoy cambiando de escenario. Y visto lo visto, en este sector voy a seguir aprendiendo el resto de la vida.</p>
+    <!-- 03 · ESTE PROYECTO -->
+    <section id="este-proyecto" class="scene scene--este-proyecto" aria-labelledby="este-proyecto-title">
+      <div class="scene__inner scene__inner--este-proyecto">
+        <p class="script-label">INT. ESTE PROYECTO — FULL STACK — DÍA</p>
+        <h2 id="este-proyecto-title" class="scene__title">Esta web es la prueba</h2>
+        <p class="este-proyecto__lead">
+          No es solo un portfolio estático. Es un producto full stack que puedes auditar.
+        </p>
+        <ul class="scene__list este-proyecto__list">
+          <li><strong>Frontend</strong> — HTML, CSS, JS · scroll lateral tipo guión</li>
+          <li><strong>API</strong> — Python + FastAPI · también Azure / IA en otros repos</li>
+          <li><strong>Base de datos</strong> — SQLite · formulario que guarda mensajes</li>
+          <li><strong>Admin</strong> — login, mensajes y CRUD de proyectos</li>
+        </ul>
+        <div class="este-proyecto__stack">
+          <span class="stack__tag">HTML</span>
+          <span class="stack__tag">CSS</span>
+          <span class="stack__tag">JavaScript</span>
+          <span class="stack__tag">Python</span>
+          <span class="stack__tag">FastAPI</span>
+          <span class="stack__tag">SQLite</span>
+          <span class="stack__tag">Azure</span>
+          <span class="stack__tag">Git</span>
         </div>
       </div>
     </section>
 
-    <!-- 09 · PROYECTOS -->
+    <!-- 04 · PROYECTOS -->
     <section id="proyectos" class="scene scene--proyectos" aria-labelledby="proyectos-title">
       <div class="scene__inner scene__inner--proyectos">
-        <p class="script-label">ESCENA 09</p>
+        <p class="script-label">INT. PROYECTOS — REPOS — DÍA</p>
         <h2 id="proyectos-title" class="scene__title">Proyectos</h2>
         <p class="proyectos__intro">
-          Todo público, sin login.
+          Destaco lo sólido. El resto está en
           <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer">github.com/Sarajesko →</a>
         </p>
         <div class="proyectos__grid" id="proyectos-grid">
           <article class="proyecto-card proyecto-card--featured">
             <div class="proyecto-card__media">
-              <img
-                class="proyecto-card__img"
-                src="../assets/projects/manga-festival.png"
-                alt="Captura de Manga-festival-Web"
-                loading="lazy"
-                width="800"
-                height="450"
-              >
-              <div class="proyecto-card__thumb">Captura próximamente</div>
+              <div class="proyecto-card__thumb">Demo en Render</div>
             </div>
             <p class="proyecto-card__badge">Destacado</p>
-            <h3 class="proyecto-card__title">Manga-festival-Web</h3>
-            <p class="proyecto-card__desc">Web para festival de manga: validación de datos y navegación multipágina.</p>
+            <h3 class="proyecto-card__title">Cinebook</h3>
+            <p class="proyecto-card__desc">Catálogo de libros de cine: inventario, ISBN, wishlist y estadísticas.</p>
             <div class="proyecto-card__tags">
-              <span class="stack__tag">HTML</span>
-              <span class="stack__tag">CSS</span>
-              <span class="stack__tag">JavaScript</span>
+              <span class="stack__tag">Angular</span>
+              <span class="stack__tag">NestJS</span>
+              <span class="stack__tag">TypeScript</span>
             </div>
             <a
               class="proyecto-card__link"
-              href="https://github.com/Sarajesko/Manga-festival-Web"
+              href="https://github.com/Sarajesko/Cinebook"
               target="_blank"
               rel="noopener noreferrer"
             >Ver en GitHub</a>
+            <a
+              class="proyecto-card__link"
+              href="https://cinebook-o4t3.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Demo en vivo</a>
           </article>
-          <article class="proyecto-card">
+          <article class="proyecto-card proyecto-card--featured">
             <div class="proyecto-card__media">
-              <img
-                class="proyecto-card__img"
-                src="../assets/projects/validacion-php.png"
-                alt="Captura de Validación PHP"
-                loading="lazy"
-                width="800"
-                height="450"
-              >
-              <div class="proyecto-card__thumb proyecto-card__thumb--php">Captura próximamente</div>
+              <div class="proyecto-card__thumb proyecto-card__thumb--php">Azure · Docker · CI/CD</div>
             </div>
-            <h3 class="proyecto-card__title">Validación PHP</h3>
-            <p class="proyecto-card__desc">Ejercicio de validación de formularios en PHP.</p>
+            <p class="proyecto-card__badge">Destacado</p>
+            <h3 class="proyecto-card__title">rag-agent-azure</h3>
+            <p class="proyecto-card__desc">API FastAPI con agente RAG, Azure SQL, Docker y despliegue en Azure Container Apps.</p>
             <div class="proyecto-card__tags">
-              <span class="stack__tag">PHP</span>
-            </div>
-            <a
-              class="proyecto-card__link"
-              href="https://github.com/Sarajesko/Validaci-n-PHP"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Ver en GitHub</a>
-          </article>
-          <article class="proyecto-card">
-            <div class="proyecto-card__media">
-              <img
-                class="proyecto-card__img"
-                src="../assets/projects/ev-pablo.png"
-                alt="Captura de EV Pablo García"
-                loading="lazy"
-                width="800"
-                height="450"
-              >
-              <div class="proyecto-card__thumb proyecto-card__thumb--php">Captura próximamente</div>
-            </div>
-            <h3 class="proyecto-card__title">EV Pablo García</h3>
-            <p class="proyecto-card__desc">Ejercicio de validación — entrega evaluable DAW.</p>
-            <div class="proyecto-card__tags">
-              <span class="stack__tag">PHP</span>
-            </div>
-            <a
-              class="proyecto-card__link"
-              href="https://github.com/Sarajesko/EV_Pablo_GarciaMarquez"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Ver en GitHub</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10 · STACK -->
-    <section id="stack" class="scene scene--stack" aria-labelledby="stack-title">
-      <div class="scene__inner scene__inner--stack">
-        <p class="script-label">ESCENA 10</p>
-        <h2 id="stack-title" class="scene__title">Stack &amp; habilidades</h2>
-        <p class="stack__intro">Lo que uso en DAW, en la beca Erasmus+ y en Multiplicalia.</p>
-        <div class="stack__groups">
-          <div class="stack__group">
-            <h3 class="stack__group-title">Frontend</h3>
-            <div class="stack__tags">
-              <span class="stack__tag">HTML</span>
-              <span class="stack__tag">CSS</span>
-              <span class="stack__tag">JavaScript</span>
-              <span class="stack__tag">Responsive</span>
-            </div>
-          </div>
-          <div class="stack__group">
-            <h3 class="stack__group-title">Backend</h3>
-            <div class="stack__tags">
               <span class="stack__tag">Python</span>
               <span class="stack__tag">FastAPI</span>
-              <span class="stack__tag">PHP</span>
-              <span class="stack__tag">SQLite</span>
-              <span class="stack__tag">SQL</span>
+              <span class="stack__tag">Azure</span>
+              <span class="stack__tag">Docker</span>
             </div>
-          </div>
-          <div class="stack__group">
-            <h3 class="stack__group-title">CMS &amp; SEO</h3>
-            <div class="stack__tags">
-              <span class="stack__tag">WordPress</span>
-              <span class="stack__tag">Elementor</span>
-              <span class="stack__tag">SEO técnico</span>
-              <span class="stack__tag">Analytics</span>
-            </div>
-          </div>
-          <div class="stack__group">
-            <h3 class="stack__group-title">Herramientas</h3>
-            <div class="stack__tags">
-              <span class="stack__tag">Git</span>
-              <span class="stack__tag">GitHub</span>
-              <span class="stack__tag">Postman</span>
-              <span class="stack__tag">Search Console</span>
-            </div>
-          </div>
+            <a
+              class="proyecto-card__link"
+              href="https://github.com/Sarajesko/rag-agent-azure"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Ver en GitHub</a>
+          </article>
         </div>
-        <p class="stack__note">Formación DAW · Certificado IFCD0110 (9,04) · Inglés</p>
       </div>
     </section>
 
-    <!-- 11 · CONTACTO -->
+    <!-- 05 · CONTACTO -->
     <section id="contacto" class="scene scene--contacto" aria-labelledby="contacto-title">
       <div class="scene__inner scene__inner--contacto">
-        <p class="script-label">ESCENA 11 · CONTACTO</p>
+        <p class="script-label">INT. CONTACTO — CIERRE — DÍA</p>
         <h2 id="contacto-title" class="scene__title">Contacto</h2>
-        <p class="contacto__lead">¿Prácticas DAW? ¿Colaboración? Escríbeme.</p>
+        <p class="contacto__lead">¿Empresa con prácticas DAW? Escríbeme o descarga el CV.</p>
         <nav class="contacto__social" aria-label="Perfiles profesionales">
           <a
             class="contacto__social-link"
@@ -402,6 +249,11 @@
             target="_blank"
             rel="noopener noreferrer"
           >LinkedIn</a>
+          <a
+            class="contacto__social-link"
+            href="../assets/cv/CV_Pablo_Garcia_Marquez_FullStack.pdf"
+            download="CV_Pablo_Garcia_Marquez_FullStack.pdf"
+          >Descargar CV</a>
         </nav>
         <form class="contacto__form" id="contact-form" novalidate>
           <div class="contacto__field">
@@ -415,8 +267,7 @@
           <div class="contacto__field">
             <label for="contact-subject">Asunto</label>
             <select id="contact-subject" name="subject" required>
-              <option value="">Selecciona…</option>
-              <option value="practicas-daw">Prácticas DAW</option>
+              <option value="practicas-daw" selected>Prácticas DAW</option>
               <option value="colaboracion">Colaboración</option>
               <option value="otro">Otro</option>
             </select>
@@ -440,7 +291,6 @@
   </main>
 
   <footer class="site-footer">
-    <p class="site-footer__swipe-hint">Desliza ← → para cambiar escena</p>
     <p class="site-footer__nav-hint">
       <kbd>←</kbd> <kbd>→</kbd> teclado
     </p>
@@ -448,11 +298,21 @@
       <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Pablo García Márquez">GitHub</a>
       <span aria-hidden="true">·</span>
       <a href="https://www.linkedin.com/in/pablogarciamarquez" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pablo García Márquez">LinkedIn</a>
+      <span aria-hidden="true">·</span>
+      <a href="../assets/cv/CV_Pablo_Garcia_Marquez_FullStack.pdf" download="CV_Pablo_Garcia_Marquez_FullStack.pdf">CV</a>
     </p>
-    <p class="site-footer__cta">Busco prácticas DAW</p>
+    <p class="site-footer__end">
+      <span class="site-footer__copy">
+        <span class="site-footer__copy-text">© 2026 · creado por</span>
+        <span class="site-header__mark" aria-label="PG">
+          <span class="site-header__bracket" aria-hidden="true">&lt;</span>
+          <span class="site-header__initials">PG</span>
+          <span class="site-header__bracket" aria-hidden="true">/&gt;</span>
+        </span>
+      </span>
+    </p>
   </footer>
-  <script src="js/scroll.js" defer></script>
-  <script src="js/panels.js" defer></script>
+  <script src="js/scroll.js?v=23" defer></script>
   <script src="js/map.js" defer></script>
   <script src="js/contact.js" defer></script>
   <script src="js/projects.js" defer></script>

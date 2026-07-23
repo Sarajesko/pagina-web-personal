@@ -1,20 +1,24 @@
-# Wireframe — Escenas horizontales
+# Wireframe — Escenas horizontales (v2)
 
-Esquema de layout para v1. Referencia: [`contexto.md`](../contexto.md).
+Esquema de layout tras **refocus jul. 2026**. Referencia: [`contexto.md`](../contexto.md).
 
-**Metáfora:** cada panel = una página de guión. Scroll horizontal (rueda del ratón / trackpad / swipe). Indicador tipo `INT. — ESCENA 03`.
+**Metáfora:** cada panel = una página de guión. Scroll horizontal. Indicador `Pág. 01/05 · FADE IN`.
+
+**Objetivo:** conseguir prácticas DAW. El mapa es el currículum.
 
 ---
 
 ## Vista global (scroll →)
 
 ```
-[01 PORTADA] → [02 EL GUIÓN] → [03 DAW] → [04 CORE] → [05 MULTIPLICALIA] → [06 ERASMUS+] → [07 MAPA] → [08 SOBRE MÍ] → [09 PROYECTOS] → [10 STACK] → [11 CONTACTO]
-     ↑                                                                                              ↑
-  FADE IN                    scroll lateral continuo                                    clicks en mapa (sin avanzar scroll)
+[01 PORTADA] → [02 MAPA / CV] → [03 ESTE PROYECTO] → [04 PROYECTOS] → [05 CONTACTO]
+     ↑                ↑
+  FADE IN        clicks en puntos (rueda no avanza)
 ```
 
 **Panel admin:** ruta aparte `/admin` — no forma parte del scroll narrativo.
+
+**Retirado del scroll:** El guión, DAW/CORE/Multiplicalia/Erasmus sueltas, Sobre mí, Stack (contenido absorbido en mapa / escena 03).
 
 ---
 
@@ -22,13 +26,13 @@ Esquema de layout para v1. Referencia: [`contexto.md`](../contexto.md).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  PG · Dev full stack          [01][02][03][04][05][06][07][08][09][10][11]  │  ← dots / paginación guión
+│  PG · Dev full stack                    [01][02][03][04][05]                 │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │                         ← CONTENIDO DE ESCENA →                             │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│  ← → teclado    ·    GitHub · LinkedIn    ·    BUSCO PRÁCTICAS DAW          │  ← footer fijo
+│  ← → teclado    ·    GitHub · LinkedIn    ·    BUSCO PRÁCTICAS DAW          │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -38,265 +42,88 @@ Esquema de layout para v1. Referencia: [`contexto.md`](../contexto.md).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                                                                             │
-│                         ░░░ TEXTURA / GRANO ░░░                             │
-│                                                                             │
 │                              FADE IN:                                       │
-│                                                                             │
 │                      Pablo García Márquez                                   │
 │              Desarrollador full stack · Ex-guionista                        │
 │                                                                             │
-│                   [ Busco prácticas DAW — escríbeme ]                       │
+│              Busco prácticas DAW — módulo superior                          │
+│     Ya he trabajado: Multiplicalia + Fluid Financial (Erasmus+)             │
 │                                                                             │
-│                         scroll → para empezar                               │
-│                                                                             │
+│                   [ Contactar — prácticas DAW ]                             │
+│                         scroll → mapa                                       │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 02 — EL GUIÓN (concepto de la web)
+## 02 — MAPA / POR QUÉ YO
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  INT. WEB — DÍA                                                             │
+│  ESCENA 02 · MAPA                                                           │
+│  Por qué yo                                                                 │
+│  Click en un punto — el recorrido es el currículum.                         │
 │                                                                             │
-│     "Esta no es una web que se lee de arriba abajo.                         │
-│      Es un guión: avanzas escena a escena."                                 │
-│                                                                             │
-│     · Scroll lateral = pasar página                                         │
-│     · Mapa = viaje Sevilla → Irlanda                                        │
-│     · Todo público — mis proyectos incluidos                                │
-│                                                                             │
-│                              [ → Siguiente escena ]                         │
+│   ┌─────────────────────────────┐  ┌──────────────────────┐                 │
+│   │   [mapa Europa relieve]     │  │ Sevilla              │                 │
+│   │      ● Sevilla              │  │ Formación · prácticas│                 │
+│   │   ● Galway  ● Cork          │  │ [logos]              │                 │
+│   │                             │  │ hechos · DAW · CORE  │                 │
+│   └─────────────────────────────┘  │ · Multiplicalia      │                 │
+│                                    └──────────────────────┘                 │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 03 — DAW ILERNA (Sevilla)
+## 03 — ESTE PROYECTO
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 03 · SEVILLA                                                        │
+│  ESCENA 03 · ESTE PROYECTO                                                  │
+│  Esta web es la prueba                                                      │
 │                                                                             │
-│   [logo Ilerna]     Desarrollo de Aplicaciones Web                          │
-│                     Ilerna · Sevilla · en curso                             │
+│  · Frontend — HTML, CSS, JS · scroll lateral                                │
+│  · API — Python + FastAPI                                                   │
+│  · BD — SQLite · formulario que guarda                                      │
+│  · Admin — login, mensajes, CRUD proyectos                                  │
 │                                                                             │
-│                     Buscando prácticas del módulo superior.                 │
-│                                                                             │
-│   ─────────────────────────────────────────────────────                     │
-│   CTA sutil: "¿Tienes empresa? → Contacto"                                  │
+│  [HTML] [CSS] [JS] [Python] [FastAPI] [SQLite] [Git]                        │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 04 — CORE NETWORKS
+## 04 — PROYECTOS
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 04 · FORMACIÓN                                                      │
+│  ESCENA 04 · PROYECTOS                                                      │
+│  Destaco lo sólido. Resto en github.com/Sarajesko                           │
 │                                                                             │
-│   [logo CORE]       Certificado IFCD0110                                     │
-│                     CORE Networks · Junta de Andalucía                      │
-│                     oct 2025 – abr 2026 · Nota: 9,04                      │
-│                                                                             │
-│                     HTML · CSS · JS · formularios · publicación             │
+│   ┌─────────────────────────────────────┐                                   │
+│   │  [captura]  Destacado               │                                   │
+│   │  Manga-festival-Web                 │                                   │
+│   │  HTML · CSS · JS → GitHub           │                                   │
+│   └─────────────────────────────────────┘                                   │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 05 — MULTIPLICALIA (click profundiza → panel)
+## 05 — CONTACTO / FADE OUT
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 05 · PRÁCTICAS                                                      │
+│  FADE OUT · CONTACTO                                                        │
+│  ¿Empresa con prácticas DAW? Escríbeme.                                     │
+│  [ GitHub ]  [ LinkedIn ]                                                   │
 │                                                                             │
-│   [logo Multiplicalia]   Desarrollador web                                  │
-│                          feb – mar 2026 · Sevilla · Híbrido                 │
-│                                                                             │
-│   WordPress · SEO · UX                                    [ + Ver detalle ] │
-│                                                                             │
-│   ┌─ PANEL (al click, overlay lateral) ─────────────────┐                   │
-│   │  • Elementor / WPBakery                            │                   │
-│   │  • SEO técnico y contenidos                        │                   │
-│   │  • Analytics, Search Console, Screaming Frog       │                   │
-│   └────────────────────────────────────────────────────┘                   │
+│  Nombre · Email · Asunto (Prácticas DAW por defecto) · Mensaje · Privacidad │
+│                         [ Enviar ]                                          │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 06 — ERASMUS+ / FLUID FINANCIAL
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 06 · IRLANDA                                                        │
-│                                                                             │
-│   [logo Fluid]      Desarrollador full stack · Beca Erasmus+ UE             │
-│                     jun 2026 – actualidad                                   │
-│                                                                             │
-│        📍 Galway — donde resido          📍 Cork — sede (remoto)           │
-│                                                                             │
-│                                              [ + Ver detalle ]              │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 07 — MAPA DEL VIAJE (modo interactivo)
-
-Scroll llega aquí. **Clicks en mapa NO mueven el scroll.**
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 07 · MAPA                                                           │
-│                                                                             │
-│   ┌──────────────────────────────────────┐  ┌─────────────────────────┐    │
-│   │                                      │  │  SEVILLA                │    │
-│   │     [ SVG Europa relieve ]           │  │  DAW en Ilerna.         │    │
-│   │                                      │  │  Prácticas Multipli…    │    │
-│   │        ● Sevilla                     │  │  [ilerna] [multipli]    │    │
-│   │              ● Galway    ● Cork      │  └─────────────────────────┘    │
-│   │                                      │         ↑ panel info (click)    │
-│   └──────────────────────────────────────┘                                  │
-│                                                                             │
-│   Textos: content/map-locations.md                                          │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 08 — SOBRE MÍ
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 08 · SOBRE MÍ                                                       │
-│                                                                             │
-│   "Pasé del guión al código. Antes escribía historias;                      │
-│    ahora las construyo."                                                    │
-│                                                                             │
-│   Lisboa · Irlanda · Sevilla · sector aéreo · DAW · Erasmus+                │
-│                                                                             │
-│   "No estoy empezando de cero: estoy cambiando de escenario."               │
-│                                                                             │
-│   (Texto completo: contexto.md §4)                                          │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 09 — PROYECTOS (público, API/BD)
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 09 · PROYECTOS                        [ Ver todo en GitHub → ]      │
-│                                                                             │
-│   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
-│   │ [captura]       │  │ [captura]       │  │ [captura]       │          │
-│   │ Manga Festival  │  │ Validación PHP  │  │ EV Pablo G.     │          │
-│   │ ★ destacado     │  │                 │  │                 │          │
-│   │ [ GitHub ]      │  │ [ GitHub ]      │  │ [ GitHub ]      │          │
-│   └─────────────────┘  └─────────────────┘  └─────────────────┘          │
-│                                                                             │
-│   Datos: GET /api/projects (sin login)                                      │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 10 — STACK / HABILIDADES
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 10 · STACK                                                          │
-│                                                                             │
-│   Frontend          Backend           Otros                                 │
-│   HTML CSS JS       Python FastAPI    WordPress · SEO                       │
-│                     SQLite SQL        Git · Postman                         │
-│                                                                             │
-│   (Tags / chips visuales, no lista infinita)                                │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 11 — CONTACTO (formulario → BD)
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  ESCENA 11 · CONTACTO                                                       │
-│                                                                             │
-│   ¿Prácticas DAW? ¿Colaboración? Escríbeme.                                │
-│                                                                             │
-│   Nombre [________]   Email [________]                                      │
-│   Asunto [ Prácticas DAW ▼ ]                                                │
-│   Mensaje [________________________]                                        │
-│   [ ] He leído la política de privacidad                                    │
-│   [ Enviar ]  →  POST /api/contact                                          │
-│                                                                             │
-│   LinkedIn · GitHub                                                         │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Admin (ruta separada)
-
-```
-frontend/admin/
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  LOGIN ADMIN                                                                │
-│  usuario [________]  contraseña [________]  [ Entrar ]                      │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  MENSAJES                    │  PROYECTOS                                   │
-│  · lista contact_messages    │  · CRUD projects                             │
-│  · marcar leído              │  · orden / publicar                          │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Comportamiento scroll vs click
-
-| Zona | Scroll lateral | Click |
-|------|----------------|-------|
-| Escenas 01–06 | Avanza panel | 05–06: abre panel detalle |
-| Escena 07 mapa | Llega al mapa; no avanza con clicks en puntos | Punto rojo → panel info |
-| Escenas 08–11 | Sigue avanzando horizontal | Formulario, enlaces |
-
----
-
-## Móvil (nota diseño)
-
-```
-Viewport estrecho:
-· Mismo orden de escenas
-· Swipe horizontal entre paneles
-· Mapa: SVG arriba, panel info abajo (stack vertical dentro del panel)
-· Footer CTA siempre visible
-```
-
----
-
-## Resumen de paneles
-
-| # | ID | Título | Interacción especial |
-|---|-----|--------|----------------------|
-| 01 | `portada` | FADE IN | CTA prácticas |
-| 02 | `guion` | El guión | — |
-| 03 | `daw` | DAW Ilerna | CTA contacto |
-| 04 | `core` | CORE Networks | — |
-| 05 | `multiplicalia` | Prácticas | Panel detalle |
-| 06 | `erasmus` | Erasmus+ | Panel detalle |
-| 07 | `mapa` | Mapa viaje | Clicks Sevilla / Galway / Cork |
-| 08 | `sobre-mi` | Sobre mí | — |
-| 09 | `proyectos` | Proyectos | Enlaces GitHub |
-| 10 | `stack` | Habilidades | — |
-| 11 | `contacto` | Contacto | Formulario API |
-
----
-
-*Paso 1.1 — jun. 2026 · Validar antes de paleta (1.2) y portada (1.3)*
+*v2 · julio 2026 — sustituye el wireframe de 11 escenas.*

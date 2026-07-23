@@ -1,6 +1,7 @@
 /**
  * Mapa interactivo — Sevilla, Galway, Cork
- * Posiciones % sobre el mapa LAEA (europe-relief.svg, viewBox 367×306)
+ * El mapa ES el currículum (opción A · 5 escenas).
+ * Posiciones % sobre europe-relief.svg (LAEA).
  * Textos: content/map-locations.md
  */
 
@@ -22,21 +23,40 @@
   var locations = {
     sevilla: {
       title: "Sevilla",
-      text: "DAW en Ilerna. Prácticas de WordPress y SEO en Multiplicalia.",
-      logos: ["ilerna.jpg", "multiplicalia.jpg"],
+      role: "Formación · prácticas",
+      text: "Base de la trayectoria. Formación DAW, IA aplicada y primera experiencia en empresa.",
+      facts: [
+        "DAW — Ilerna · buscando prácticas del módulo superior",
+        "IFCD0110 — CORE Networks · nota 9,04 · 560 h",
+        "UNIR — Programa avanzado IA para programar (2026)",
+        "Multiplicalia — PHP, WordPress, SEO (feb–mar 2026)",
+      ],
+      logos: ["ilerna.jpg", "core-networks.png", "multiplicalia.jpg"],
       x: 7.2,
       y: 90.6,
     },
     galway: {
       title: "Galway",
-      text: "Beca Erasmus+ de la UE. Aquí resido durante la beca.",
+      role: "Residencia · Erasmus+",
+      text: "Donde vivo durante la beca. Inglés en contexto real.",
+      facts: [
+        "Beca Erasmus+ de la Unión Europea",
+        "Residencia en Galway mientras trabajo en remoto",
+        "Inglés aplicado en día a día y empresa",
+      ],
       logos: [],
       x: 10.5,
       y: 47.8,
     },
     cork: {
       title: "Cork",
-      text: "Sede de Fluid Financial. Prácticas full stack en remoto.",
+      role: "Empresa · full stack",
+      text: "Sede de Fluid Financial. Prácticas full stack en remoto desde Galway (beca UE).",
+      facts: [
+        "Fluid Financial LLC — fintech · jun–ago 2026",
+        "Pagos CardPointe + GoHighLevel · Node.js · OAuth",
+        "Android + datáfono Clover Go · pruebas en dispositivo",
+      ],
       logos: ["fluid-financial.jpg"],
       x: 10.7,
       y: 51.6,
@@ -94,6 +114,16 @@
     return '<div class="mapa__panel-logos">' + html + "</div>";
   }
 
+  function renderFacts(facts) {
+    if (!facts || !facts.length) return "";
+    var items = facts
+      .map(function (fact) {
+        return "<li>" + fact + "</li>";
+      })
+      .join("");
+    return '<ul class="mapa__panel-facts">' + items + "</ul>";
+  }
+
   function selectLocation(id) {
     var loc = locations[id];
     if (!loc) return;
@@ -104,14 +134,20 @@
       m.setAttribute("aria-pressed", active ? "true" : "false");
     });
 
+    var roleHtml = loc.role
+      ? '<p class="mapa__panel-role">' + loc.role + "</p>"
+      : "";
+
     panel.innerHTML =
       '<h3 class="mapa__panel-title">' +
       loc.title +
       "</h3>" +
+      roleHtml +
       renderLogos(loc.logos) +
       '<p class="mapa__panel-text">' +
       loc.text +
-      "</p>";
+      "</p>" +
+      renderFacts(loc.facts);
   }
 
   markers.forEach(function (marker) {

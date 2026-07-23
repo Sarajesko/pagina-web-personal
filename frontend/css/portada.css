@@ -1,23 +1,178 @@
 /* Escena 01 — Portada / FADE IN */
 
+.scene--portada {
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: calc(var(--header-height) + clamp(1.25rem, 4vh, 2.5rem));
+  padding-bottom: calc(var(--footer-height) + var(--space-sm));
+}
+
 .scene__inner--portada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding-block: 0;
+}
+
+.scene--portada .script-label {
+  width: auto;
+  max-width: 40rem;
+  margin: 0 0 0.2rem;
+  text-align: center;
+  line-height: 1.2;
+  flex-shrink: 0;
 }
 
 .portada__title {
   font-family: var(--font-display);
-  font-size: var(--text-hero);
+  font-size: clamp(2.5rem, 6vw, var(--text-hero));
   font-weight: 800;
-  line-height: var(--leading-tight);
+  line-height: 1.05;
   letter-spacing: -0.02em;
-  margin-bottom: var(--space-md);
+  margin: clamp(0.85rem, 3vh, 2rem) 0 clamp(2.5rem, 5.5vh, 3.75rem);
 }
 
 .portada__subtitle {
   font-size: var(--text-lg);
   font-weight: 400;
   color: var(--color-text-muted);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.portada__tagline {
+  max-width: 28rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-script);
+  font-size: var(--text-base);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-dim);
+}
+
+.portada__ask {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, var(--text-xl));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.portada__proof {
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-top: auto;
+  margin-bottom: var(--space-md);
+  padding-top: 0;
+}
+
+.portada__proof-label {
+  margin-bottom: var(--space-md);
+  font-family: var(--font-script);
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.portada__logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portada__logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 10rem;
+}
+
+.portada__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  border-radius: 8px;
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.portada__logo-link:hover,
+.portada__logo-link:focus-visible {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.portada__logo-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.portada__logo {
+  display: block;
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(232, 228, 220, 0.12);
+}
+
+.portada__logo--multiplicalia {
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.portada__logo--fluid {
+  width: auto;
+  height: 3.25rem;
+  max-width: 14rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+}
+
+.portada__logo-meta {
+  font-family: var(--font-script);
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+}
+
+.portada__logo-place {
+  color: var(--color-text-dim);
+}
+
+.portada__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: clamp(1.25rem, 3.5vh, 2.5rem);
+  padding-top: 0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.scene__inner--portada > .portada__hint {
+  display: none;
 }
 
 a.portada__cta,
@@ -25,9 +180,9 @@ a.portada__cta:visited,
 a.contacto__social-link,
 a.contacto__social-link:visited {
   display: inline-block;
-  padding: 0.85em 1.75em;
+  padding: 1em 2.25em;
   font-family: var(--font-display);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -49,6 +204,20 @@ a.contacto__social-link:hover {
   border-color: var(--color-accent);
 }
 
+a.portada__cta--secondary,
+a.portada__cta--secondary:visited {
+  color: var(--color-text);
+  background-color: transparent;
+  border-color: var(--color-border-light);
+}
+
+a.portada__cta--secondary:hover,
+a.portada__cta--secondary:focus-visible {
+  color: #fff;
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 a.portada__cta:focus-visible,
 a.contacto__social-link:focus-visible {
   outline: 2px solid var(--color-border-light);
@@ -56,36 +225,53 @@ a.contacto__social-link:focus-visible {
 }
 
 .portada__hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-xl);
-  font-family: var(--font-script);
-  font-size: var(--text-sm);
-  color: var(--color-text-dim);
+  display: none;
 }
 
 .portada__hint-arrow {
   color: var(--color-accent);
-  animation: nudge-right 2s var(--ease-out) infinite;
-}
-
-@keyframes nudge-right {
-  0%, 100% { transform: translateX(0); opacity: 0.6; }
-  50% { transform: translateX(4px); opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .portada__hint-arrow {
-    animation: none;
-    opacity: 1;
+  .portada__logo-link:hover,
+  .portada__logo-link:focus-visible {
+    transform: none;
+  }
+}
+
+@media (max-height: 820px) {
+  .portada__title {
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    margin-bottom: clamp(1.75rem, 4vh, 2.75rem);
+  }
+
+  .portada__subtitle {
+    margin-bottom: var(--space-sm);
+  }
+
+  .portada__tagline {
+    margin-bottom: var(--space-md);
+    font-size: var(--text-sm);
+  }
+
+  .portada__proof {
+    margin-bottom: var(--space-sm);
+    padding-top: 0;
+  }
+
+  .portada__logo--multiplicalia {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .portada__logo--fluid {
+    height: 2.75rem;
   }
 }
 
 @media (max-width: 480px) {
   a.portada__cta {
     width: 100%;
-    max-width: 20rem;
+    max-width: 22rem;
   }
 }

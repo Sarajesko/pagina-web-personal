@@ -17,16 +17,10 @@
   if (scenes.length === 0) return;
 
   var sceneLabels = [
-    "FADE IN",
-    "EL GUIÓN",
-    "SEVILLA",
-    "FORMACIÓN",
-    "PRÁCTICAS",
-    "IRLANDA",
+    "PORTADA",
     "MAPA",
-    "SOBRE MÍ",
+    "PROYECTO",
     "PROYECTOS",
-    "STACK",
     "CONTACTO",
   ];
 
@@ -38,8 +32,6 @@
   var scrollLock = false;
   var lockMs = reducedMotion ? 0 : 650;
   var wheelThreshold = 40;
-  var mapScene = document.getElementById("mapa");
-  var mapSceneIndex = mapScene ? scenes.indexOf(mapScene) : -1;
 
   var touchStartX = 0;
   var touchStartY = 0;
@@ -121,11 +113,6 @@
       if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
 
       var idx = currentIndex();
-      if (mapSceneIndex >= 0 && idx === mapSceneIndex) {
-        e.preventDefault();
-        return;
-      }
-
       e.preventDefault();
       if (e.deltaY > wheelThreshold) {
         goToScene(idx + 1);
@@ -166,7 +153,6 @@
       if (Math.abs(dx) < Math.abs(dy) * 1.2) return;
 
       var idx = currentIndex();
-      if (mapSceneIndex >= 0 && idx === mapSceneIndex) return;
 
       if (dx < 0) {
         goToScene(idx + 1);

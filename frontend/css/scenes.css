@@ -1,11 +1,17 @@
 /* Escenas — estilos compartidos (placeholders hasta Fase 3) */
 
+/* Escenas — títulos compactos (todo cabe sin scroll vertical) */
+
 .scene__title {
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
+  font-size: clamp(1.5rem, 3vw, var(--text-2xl));
   font-weight: 700;
   line-height: var(--leading-tight);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.script-label {
+  margin-bottom: var(--space-sm);
 }
 
 .scene__content {
@@ -161,32 +167,63 @@
   line-height: var(--leading-normal);
 }
 
-/* Mapa */
-
-.scene__inner--mapa {
-  max-width: 56rem;
+.scene__inner--mapa,
+.scene__inner--este-proyecto,
+.scene__inner--proyectos,
+.scene__inner--contacto {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
+.scene__inner--mapa {
+  max-width: min(72rem, 100%);
+}
+
+.scene__inner--mapa .script-label,
+.scene__inner--este-proyecto .script-label,
+.scene__inner--proyectos .script-label,
+.scene__inner--contacto .script-label {
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* Mapa = currículum (escena 02) */
+
 .mapa__intro {
-  font-size: var(--text-sm);
+  flex-shrink: 0;
+  font-size: var(--text-xs);
   color: var(--color-text-dim);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.mapa__intro kbd {
+  font-family: var(--font-script);
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
 }
 
 .mapa__layout {
+  flex: 1 1 auto;
+  min-height: 0;
   display: grid;
-  grid-template-columns: 1fr minmax(200px, 280px);
-  gap: var(--space-lg);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: var(--space-md);
+  align-items: stretch;
 }
 
 .mapa__wrap {
   position: relative;
+  min-height: 0;
+  height: 100%;
 }
 
 .mapa__figure {
   position: relative;
   margin: 0;
+  height: 100%;
   border: 1px solid var(--color-border);
   background: var(--color-bg-elevated);
   overflow: hidden;
@@ -195,9 +232,10 @@
 .mapa__figure img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: min(52vh, 460px);
+  height: 100%;
+  max-height: none;
   object-fit: contain;
+  object-position: center;
   opacity: 0.92;
 }
 
@@ -242,8 +280,11 @@
 }
 
 .mapa__panel {
-  padding: var(--space-md);
-  min-height: 8rem;
+  padding: var(--space-sm) var(--space-md);
+  min-height: 0;
+  max-height: none;
+  height: 100%;
+  overflow: hidden;
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-map-marker);
@@ -251,44 +292,79 @@
 
 .mapa__panel-hint {
   font-family: var(--font-script);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   color: var(--color-text-dim);
 }
 
 .mapa__panel-title {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.15rem;
   color: var(--color-text);
+}
+
+.mapa__panel-role {
+  font-family: var(--font-script);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.mapa__panel-facts {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-sm);
+}
+
+.mapa__panel-facts li {
+  position: relative;
+  padding-left: 0.85rem;
+  margin-bottom: 0.25rem;
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--color-text-muted);
+}
+
+.mapa__panel-facts li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
 }
 
 .mapa__panel-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
 }
 
 .mapa__panel-logo {
-  width: 3rem;
-  height: 3rem;
+  width: 2.25rem;
+  height: 2.25rem;
   object-fit: contain;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
   border-radius: 2px;
-  padding: 0.25rem;
+  padding: 0.2rem;
 }
 
 .mapa__panel-text {
-  font-size: var(--text-base);
-  line-height: var(--leading-relaxed);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
   color: var(--color-text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .mapa__credit {
-  margin-top: var(--space-md);
-  font-size: var(--text-xs);
+  flex-shrink: 0;
+  margin-top: var(--space-xs);
+  font-size: 0.65rem;
   color: var(--color-text-dim);
 }
 
@@ -297,17 +373,86 @@
   text-underline-offset: 0.15em;
 }
 
+.scene__inner--mapa .scene__title {
+  flex-shrink: 0;
+}
+
 @media (max-width: 768px) {
   .mapa__layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
+    gap: var(--space-sm);
   }
 
-  .mapa__panel {
-    min-height: auto;
+  .mapa__panel-text {
+    -webkit-line-clamp: 4;
+  }
+
+  .mapa__credit {
+    display: none;
   }
 }
 
-/* Escena 08 — Sobre mí */
+@media (max-width: 480px) {
+  .mapa__layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: var(--space-xs);
+  }
+
+  .mapa__panel {
+    height: auto;
+    max-height: 28%;
+  }
+
+  .mapa__intro {
+    display: none;
+  }
+}
+
+/* Escena 03 — Este proyecto */
+
+.scene__inner--este-proyecto {
+  max-width: 36rem;
+}
+
+.este-proyecto__lead {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-accent);
+}
+
+.este-proyecto__list {
+  margin-bottom: var(--space-md);
+}
+
+.este-proyecto__list li {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.este-proyecto__list strong {
+  color: var(--color-text);
+}
+
+.este-proyecto__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: 0;
+}
+
+.este-proyecto__aside {
+  font-family: var(--font-script);
+  font-size: var(--text-base);
+  letter-spacing: 0.04em;
+  color: var(--color-text-dim);
+}
+
+/* Escena legacy — Sobre mí (retirada del scroll v2) */
 
 .scene__inner--sobre-mi {
   max-width: 36rem;
@@ -346,7 +491,7 @@
 .proyectos__intro {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .proyectos__intro a {
@@ -358,13 +503,13 @@
 .proyectos__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .proyecto-card {
   display: flex;
   flex-direction: column;
-  padding: var(--space-md);
+  padding: var(--space-sm);
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
   transition: border-color var(--duration-fast) var(--ease-out);
@@ -375,21 +520,20 @@
 }
 
 .proyecto-card--featured {
-  grid-column: 1 / -1;
   border-color: var(--color-accent);
   background: linear-gradient(135deg, var(--color-bg-panel) 0%, rgba(200, 16, 46, 0.06) 100%);
 }
 
 .proyecto-card__media {
   position: relative;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .proyecto-card__img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 10rem;
+  max-height: 5.5rem;
   object-fit: cover;
   object-position: top;
   border: 1px solid var(--color-border);
@@ -397,13 +541,13 @@
 }
 
 .proyecto-card--featured .proyecto-card__img {
-  max-height: 12rem;
+  max-height: 5.5rem;
 }
 
 .proyecto-card__thumb {
   display: grid;
   place-items: center;
-  height: 5rem;
+  height: 3.5rem;
   font-family: var(--font-script);
   font-size: var(--text-xs);
   letter-spacing: 0.15em;
@@ -478,7 +622,13 @@
 
 @media (max-width: 640px) {
   .proyectos__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs);
+  }
+
+  .proyecto-card__img,
+  .proyecto-card--featured .proyecto-card__img {
+    max-height: 3.5rem;
   }
 
   .proyecto-card--featured {
@@ -711,29 +861,29 @@
 }
 
 .contacto__lead {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--color-text-muted);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .contacto__social {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .contacto__form {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   margin-top: 0;
   max-width: 28rem;
 }
 
 .contacto__field label {
   display: block;
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-xs);
+  font-size: var(--text-xs);
+  margin-bottom: 0.2rem;
   color: var(--color-text-muted);
 }
 
@@ -741,9 +891,9 @@
 .contacto__field select,
 .contacto__field textarea {
   width: 100%;
-  padding: 0.65em 0.85em;
+  padding: 0.45em 0.7em;
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--color-text);
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);
@@ -751,13 +901,14 @@
 }
 
 .contacto__field textarea {
-  min-height: 6rem;
-  resize: vertical;
+  min-height: 3.25rem;
+  max-height: 3.25rem;
+  resize: none;
 }
 
 .contacto__submit {
   justify-self: start;
-  padding: 0.75em 1.5em;
+  padding: 0.55em 1.25em;
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 600;

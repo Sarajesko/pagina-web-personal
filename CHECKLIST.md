@@ -13,7 +13,7 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 3. **No saltar pasos** — aunque parezcan independientes, el orden evita rehacer trabajo.
 4. **Estados:** `[ ]` pendiente · `[~]` en curso · `[x]` hecho · `[-]` omitido
 
-**Paso actual:** **7.2** — Accesibilidad *(esperando validación 7.1)*
+**Paso actual:** **9.7 / 9.8** — pulir mapa + responsive *(tras validar 9.1–9.6)*
 
 ---
 
@@ -126,10 +126,10 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 |---|------|------------|--------|
 | 7.1 | **Responsive** — móvil (swipe o fallback) | Viewport estrecho OK | `[x]` |
 | 7.2 | **Accesibilidad** — teclado, focus, `prefers-reduced-motion` | Navegable | `[ ]` |
-| 7.3 | **Favicon** (identidad visual clara) | `assets/favicon/` | `[ ]` |
+| 7.3 | **Favicon** — `<PG/>` (SVG + ICO + PNG) | `assets/favicon/` | `[x]` |
 | 7.4 | **Meta tags** Open Graph + SEO | Preview LinkedIn | `[ ]` |
 | 7.5 | Revisión textos y CTAs | Copy pulido | `[ ]` |
-| 7.6 | CV descargable *(opcional)* | PDF | `[-]` |
+| 7.6 | CV descargable | PDF en `assets/cv/` + botones portada/contacto | `[x]` |
 
 **Validación fase 7:** web presentable desktop + móvil.
 
@@ -149,20 +149,41 @@ Plan de ejecución paso a paso. Referencia: [`contexto.md`](contexto.md).
 
 ---
 
+## Fase 9 — Refocus (5 escenas · mapa = CV)
+
+Decisión (jul. 2026): demasiadas páginas; objetivo = **prácticas DAW**. Mantener scroll lateral / metáfora guión. **Opción A:** el mapa es el currículum.
+
+| # | Paso | Entregable | Estado |
+|---|------|------------|--------|
+| 9.1 | Reducir scroll a **5 escenas** + nav `01–05` | `frontend/index.html` | `[x]` |
+| 9.2 | **Hero** con ask explícito + prueba (Multiplicalia / Erasmus+) | Portada | `[x]` |
+| 9.3 | **Mapa = Por qué yo** — panel con rol, hechos, logos (Sevilla/Galway/Cork) | `map.js` + `map-locations.md` | `[x]` |
+| 9.4 | Escena **Esta web es la prueba** (FastAPI + SQLite + admin) | Escena 03 | `[x]` |
+| 9.5 | Proyectos: priorizar destacados (máx. 2) · contacto con asunto DAW por defecto | Escenas 04–05 | `[x]` |
+| 9.5b | CV descargable + proyectos fuertes (Cinebook, rag-agent-azure) | `assets/cv/` + seed | `[x]` |
+| 9.6 | Actualizar `contexto.md` + `docs/wireframe.md` a estructura v2 | Docs alineados | `[x]` |
+| 9.7 | Pulir mapa (ruta visual, zoom, más presencia) *(opcional, tras validar)* | UX mapa | `[ ]` |
+| 9.8 | Revisar responsive 5 escenas + mapa protagonista | Viewport móvil OK | `[ ]` |
+
+**Validación fase 9:** reclutador entiende ask en pág. 01; CV en mapa; prueba full stack en 03; contacto claro.
+
+---
+
 ## Resumen rápido
 
 ```
 Fase 0  Preparación      → 6 pasos
 Fase 1  Diseño           → 3 pasos
 Fase 2  Frontend base    → 4 pasos
-Fase 3  Escenas          → 6 pasos
+Fase 3  Escenas (v1)     → 6 pasos
 Fase 4  Mapa             → 4 pasos
 Fase 5  Secciones        → 5 pasos
 Fase 6  Backend + BD     → 12 pasos
 Fase 7  Pulido           → 5–6 pasos
 Fase 8  Publicación      → 5 pasos
+Fase 9  Refocus 5 escenas → 8 pasos
 ─────────────────────────────────
-Total: ~50 pasos
+Total: ~58 pasos (v1 histórico + refocus)
 ```
 
 ---
@@ -184,7 +205,8 @@ Total: ~50 pasos
 | jun. 2026 | 2.3 | scroll.js — OK |
 | jun. 2026 | 2.4 | Indicador escena — OK |
 | jun. 2026 | 3.1–3.2 | Portada + El guión — pendiente OK |
+| jul. 2026 | 9.0 | Feedback amigo + análisis RRHH → refocus 5 escenas, mapa = CV (opción A) |
 
 ---
 
-*Actualizado: junio 2026 · Sincronizado con `contexto.md`*
+*Actualizado: julio 2026 · Sincronizado con `contexto.md` (estructura v2)*

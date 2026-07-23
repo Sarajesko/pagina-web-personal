@@ -20,41 +20,29 @@ Eso no es un dato anecdótico: es el **concepto rector** de la página. Las webs
 
 ---
 
-## 2. Narrativa interactiva — el viaje
+## 2. Narrativa interactiva — el viaje (v2 · 5 escenas)
 
-La experiencia tiene dos fases:
-
-### Fase 1: Scroll lateral (las «páginas del guión»)
-
-Scroll horizontal que cuenta la trayectoria en orden cronológico/narrativo. Cada «página» o panel es una escena:
+**Decisión jul. 2026:** menos páginas, mismo scroll lateral / metáfora de guión. Objetivo comercial: **prácticas DAW**. El **mapa es el currículum** (opción A).
 
 | Escena | Contenido | Interacción |
 |--------|-----------|-------------|
-| 1 | **DAW en Sevilla** — Ilerna, terminando el ciclo formativo | Aparece al hacer scroll lateral |
-| 2 | **Formación IFCD0110** — CORE Networks (curso del paro) | Scroll lateral |
-| 3 | **Prácticas Multiplicalia** — Sevilla, feb.–mar. 2026 | Click para profundizar |
-| 4 | **Beca Erasmus+ UE** — Galway (becado) · Fluid Financial, Cork (empresa, remoto) | Click para profundizar |
-
-### Fase 2: Clicks que revelan (sin scroll lateral)
-
-A partir de cierto punto, los **clicks ya no avanzan el scroll horizontal**. En su lugar:
-
-- Se **despliega información** en la misma vista (overlay, panel o zona expandida).
-- Aparece un **mapa en relieve de Europa** — se ven los perfiles/topografía de los países, estilizado, no un Google Maps genérico.
-- Con cada click: **punto rojo** en la ubicación + **logo** de la institución/empresa + **texto breve**.
-- Sensación de **road movie / montaje de guión**: cada click es un corte a la siguiente escena del viaje.
+| 01 · FADE IN | Nombre + **Busco prácticas DAW** + prueba (Multiplicalia / Erasmus+) + CTA | Scroll |
+| 02 · MAPA | Sevilla / Galway / Cork = formación y experiencia | Click en puntos (sin avanzar scroll) |
+| 03 · ESTE PROYECTO | Esta web como prueba full stack (API, SQLite, admin) | Scroll |
+| 04 · PROYECTOS | 1–2 destacados + GitHub | Scroll |
+| 05 · CONTACTO | Formulario (asunto DAW por defecto) + LinkedIn + GitHub | Scroll / form |
 
 ### Puntos del mapa (marcadores rojos)
 
 | Ubicación | Qué representa | Logo |
 |-----------|----------------|------|
-| **Sevilla** | DAW Ilerna + prácticas Multiplicalia | Ilerna, Multiplicalia |
+| **Sevilla** | DAW Ilerna + IFCD0110 + Multiplicalia · ask prácticas módulo superior | Ilerna, CORE, Multiplicalia |
 | **Galway, Irlanda** | Beca Erasmus+ — donde reside Pablo | — |
-| **Cork, Irlanda** | Fluid Financial LLC — sede de la empresa (prácticas en remoto) | Fluid Financial |
+| **Cork, Irlanda** | Fluid Financial LLC — sede (prácticas en remoto) | Fluid Financial |
 
-> **Importante:** La empresa está en **Cork**, pero Pablo está **becado en Galway**. Son dos puntos distintos en el mapa; al hacer click en cada uno, texto breve que lo deje claro.
+> **Importante:** La empresa está en **Cork**, pero Pablo está **becado en Galway**. Son dos puntos distintos.
 >
-> **Nota:** Lisboa aparece en la biografía (trabajo previo, inicio del enamoramiento con la programación). Valorar si añadir un punto en el mapa en fase posterior; no es prioritario en v1.
+> Escenas retiradas del scroll (contenido absorbido): El guión, DAW/CORE/Multiplicalia/Erasmus sueltas, Sobre mí, Stack.
 
 ---
 
@@ -141,7 +129,7 @@ Decisión confirmada: **todo el portfolio público** + **login solo para adminis
 
 | Rol | Acceso |
 |-----|--------|
-| **Invitado** (sin login) | Toda la web: trayectoria, mapa, Sobre mí, **proyectos completos**, GitHub, LinkedIn, formulario de contacto |
+| **Invitado** (sin login) | Toda la web: mapa-CV, esta web como prueba, **proyectos**, GitHub, LinkedIn, formulario de contacto |
 | **Administrador** (Pablo) | Panel admin: ver mensajes del formulario, CRUD de proyectos en BD, gestión básica |
 
 ### Fase 2 (futuro, no v1)
@@ -282,21 +270,15 @@ Prioridad: **simple y acorde a DAW**, con **backend + SQL + panel admin** visibl
 
 ---
 
-## 11. Estructura de secciones
+## 11. Estructura de secciones (v2)
 
-1. **Portada / FADE IN** — nombre, rol («Desarrollador full stack · Ex-guionista»), gancho visual.
-2. **El guión** — intro breve al concepto de la web.
-3. **Escena: DAW Ilerna** — formación actual + buscando prácticas módulo superior.
-4. **Escena: CORE Networks** — certificado IFCD0110.
-5. **Escena: Multiplicalia** — prácticas curso del paro, Sevilla.
-6. **Escena: Erasmus+ / Fluid Financial** — becado en Galway, empresa en Cork (remoto).
-7. **Mapa del viaje** — relieve Europa, clicks, puntos rojos, logos, textos breves.
-8. **Sobre mí** — biografía narrativa (texto LinkedIn adaptado).
-9. **Proyectos** — tarjetas públicas (API/BD) + enlace GitHub siempre visible.
-10. **Stack / habilidades** — HTML, CSS, JS, WordPress, SEO, PHP, etc.
-11. **Contacto** — formulario → BD + LinkedIn + GitHub + CTA prácticas DAW.
+1. **Portada / FADE IN** — nombre, rol, **Busco prácticas DAW**, prueba en 1 línea, CTA.
+2. **Mapa / Por qué yo** — relieve Europa; clicks Sevilla · Galway · Cork = currículum.
+3. **Este proyecto** — esta web como prueba full stack (FastAPI, SQLite, admin).
+4. **Proyectos** — destacados (máx. 2) + enlace GitHub.
+5. **Contacto** — formulario → BD + LinkedIn + GitHub · asunto por defecto prácticas DAW.
 
-*(Panel admin en ruta aparte, no cuenta como «escena» del guión.)*
+*(Panel admin en ruta aparte, no cuenta como escena del guión.)*
 
 ---
 
@@ -311,32 +293,19 @@ Prioridad: **simple y acorde a DAW**, con **backend + SQL + panel admin** visibl
 ### Pendientes
 - [ ] Capturas de pantalla de proyectos (Manga-festival-Web, etc.)
 - [x] Textos breves definitivos por punto del mapa — `content/map-locations.md` *(editables)*
-- [ ] **Favicon** — pendiente de diseñar (ver nota abajo)
+- [x] **Favicon** — `<PG/>` en `assets/favicon/` (SVG + ICO + PNG)
 - [ ] Meta tags Open Graph (imagen preview para LinkedIn/WhatsApp; puede reutilizar favicon o crear una aparte)
-- [ ] CV descargable (opcional)
+- [x] CV descargable — `assets/cv/CV_Pablo_Garcia_Marquez_FullStack.pdf`
 - [x] SVG mapa Europa en relieve — `assets/maps/europe-relief.svg` (+ README atribución)
 - [ ] Cuenta/servicio SMTP *(opcional, fase posterior)*
 - [ ] Colección Postman del API de contacto
 - [x] `.env.example` con variables documentadas (sin secretos reales)
 
-### Favicon — pendiente, sin idea cerrada aún
+### Favicon — hecho (jul. 2026)
 
-Hace falta un favicon (icono de pestaña del navegador). **Todavía no hay concepto definido** — diseñarlo más adelante, cuando encaje con la identidad visual de la web.
+Concepto: iniciales **PG** (rojo `#c8102e`) entre brackets de código `< / >` sobre fondo `#0c0c0e`. Metáfora guionista → desarrollador.
 
-**Requisitos técnicos (cuando exista):**
-- Formatos: `favicon.ico` + `favicon.svg` (opcional, escala mejor)
-- Tamaños: 32×32 mínimo; 180×180 para Apple touch icon
-- Debe leerse bien a tamaño minúsculo (pestaña del navegador)
-- Coherente con paleta oscura / texturas tipo Sala X
-
-**Ideas en el tintero** *(solo semillas, nada decidido)*:
-- Metáfora **guión → código**: una «X» de montaje (`FADE IN`) mezclada con `< />` o `{ }`
-- Iniciales **PG** o **P** estilizadas como marca de guión (Courier / máquina de escribir)
-- Una **página de script** vista de perfil (rectángulo con líneas de texto)
-- Punto rojo del **mapa** (coherente con los marcadores del viaje)
-- Símbolo mínimo de **escena / acto** (INT. / EXT. reducido a icono)
-
-> Decidir el favicon **después** de tener la portada y la paleta de la maqueta — así no se hace dos veces.
+Archivos: `favicon.svg`, `favicon.ico`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png`.
 
 ---
 
@@ -392,8 +361,10 @@ Hace falta un favicon (icono de pestaña del navegador). **Todavía no hay conce
 33. ~~Fase 6.10 .env.example + README~~ ✓
 34. ~~Fase 6.12 CORS + errores HTTP~~ ✓ — **Fase 6 completa**
 35. ~~Fase 7.1 Responsive~~ ✓
-36. **Fase 7.2** — Accesibilidad *(siguiente)*
+36. ~~Fase 9.1–9.5 Refocus 5 escenas (opción A)~~ ✓ *(pendiente validación Pablo)*
+37. **Fase 9.6** — docs wireframe + cierre checklist
+38. **Fase 7.2** — Accesibilidad *(después del refocus)*
 
 ---
 
-*Última actualización: junio 2026 — documento vivo; ampliar según avance el proyecto.*
+*Última actualización: julio 2026 — documento vivo; ampliar según avance el proyecto.*
