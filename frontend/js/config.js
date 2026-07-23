@@ -16,8 +16,12 @@
     return;
   }
 
-  /* Front servido por la propia API (Render): mismo origen */
-  if (host.indexOf("onrender.com") !== -1) {
+  /* Front servido por la propia API (Render / tunnel): mismo origen */
+  if (
+    host.indexOf("onrender.com") !== -1 ||
+    host.indexOf("loca.lt") !== -1 ||
+    host.indexOf("ngrok") !== -1
+  ) {
     window.PORTFOLIO_API = "";
     return;
   }
