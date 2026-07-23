@@ -1,6 +1,6 @@
 # Página web personal — Pablo García Márquez
 
-Web personal / portfolio con metáfora de **guión** (5 escenas, scroll lateral), mapa = currículum, y backend full stack.
+Web personal / portfolio con metáfora de **guión** (**5 escenas**, scroll lateral), **mapa = currículum**, y backend full stack (FastAPI + SQLite + admin).
 
 **Autor:** Pablo García Márquez  
 **Repositorio:** [github.com/Sarajesko/pagina-web-personal](https://github.com/Sarajesko/pagina-web-personal)  
@@ -11,35 +11,57 @@ Web personal / portfolio con metáfora de **guión** (5 escenas, scroll lateral)
 
 ## Índice
 
-1. [¿Para qué sirve?](#para-qué-sirve)
-2. [Qué incluye](#qué-incluye)
-3. [Estructura del repo](#estructura-del-repo)
-4. [Requisitos](#requisitos)
-5. [Arranque rápido](#arranque-rápido)
-6. [Frontend](#frontend)
-7. [Backend (API)](#backend-api)
-8. [API REST](#api-rest)
-9. [Ejemplos curl](#ejemplos-curl)
-10. [Panel admin](#panel-admin)
-11. [Tests](#tests)
-12. [Postman](#postman)
-13. [Stack y arquitectura](#stack-y-arquitectura)
-14. [Solución de problemas](#solución-de-problemas)
-15. [Próximos pasos](#próximos-pasos)
-16. [Autor y derechos](#autor-y-derechos)
+1. [Capturas de pantalla](#capturas-de-pantalla)
+2. [¿Para qué sirve?](#para-qué-sirve)
+3. [Qué incluye](#qué-incluye)
+4. [Las 5 escenas](#las-5-escenas)
+5. [Estructura del repo](#estructura-del-repo)
+6. [Requisitos](#requisitos)
+7. [Arranque rápido](#arranque-rápido)
+8. [Frontend](#frontend)
+9. [Backend (API)](#backend-api)
+10. [API REST](#api-rest)
+11. [Ejemplos curl](#ejemplos-curl)
+12. [Panel admin](#panel-admin)
+13. [Tests](#tests)
+14. [Postman](#postman)
+15. [Stack y arquitectura](#stack-y-arquitectura)
+16. [Solución de problemas](#solución-de-problemas)
+17. [Próximos pasos](#próximos-pasos)
+18. [Autor y derechos](#autor-y-derechos)
+
+---
+
+## Capturas de pantalla
+
+### 01 · Portada
+
+![Portada — Busco prácticas DAW](docs/screenshots/01-portada.png)
+
+### 02 · Mapa (currículum)
+
+![Mapa Europa — Sevilla, Galway, Cork](docs/screenshots/02-mapa.png)
+
+### 04 · Proyectos
+
+![Proyectos destacados — Cinebook y rag-agent-azure](docs/screenshots/04-proyectos.png)
+
+### 05 · Contacto
+
+![Contacto — formulario y CV](docs/screenshots/05-contacto.png)
 
 ---
 
 ## ¿Para qué sirve?
 
-Portfolio con personalidad para **prácticas del módulo superior DAW**, sin esconder el contenido a visitantes:
+Portfolio con personalidad para **prácticas DAW** (módulo superior), sin esconder el contenido:
 
-- contar la trayectoria en **escenas** (como páginas de un guión), no en un scroll vertical genérico;
-- mostrar formación, prácticas y Erasmus+ con atmósfera propia;
-- mapa de Europa (Sevilla, Galway, Cork);
-- demostrar **frontend + backend + SQL**: proyectos públicos vía API, formulario de contacto en BD y panel admin.
+- trayectoria en **escenas** (páginas de un guión), sin scroll vertical por escena;
+- el **mapa de Europa es el currículum** (Sevilla / Galway / Cork);
+- esta misma web como prueba **full stack** (API, SQLite, panel admin);
+- proyectos destacados + formulario de contacto en BD.
 
-**Invitados** ven todo (proyectos incluidos) y los enlaces a GitHub / LinkedIn.  
+**Invitados** ven todo (proyectos incluidos) y los enlaces a GitHub / LinkedIn / CV.  
 **No hay registro de usuarios** en v1: solo login de administrador (Pablo).
 
 ---
@@ -49,8 +71,10 @@ Portfolio con personalidad para **prácticas del módulo superior DAW**, sin esc
 | Área | Estado |
 |------|--------|
 | Front HTML/CSS/JS — scroll lateral tipo guión | Listo |
-| Escenas (portada, trayectoria, sobre mí, proyectos, stack, contacto) | Listo |
-| Mapa Europa interactivo (SVG + puntos) | Listo |
+| **5 escenas** (portada, mapa, este proyecto, proyectos, contacto) | Listo |
+| Mapa Europa interactivo = currículum (SVG + puntos) | Listo |
+| Layout viewport-fit (sin scroll vertical por escena) | Listo |
+| Favicon `<PG/>` / CV descargable | Listo |
 | Responsive (móvil) | Listo |
 | API FastAPI + SQLite | Listo |
 | `POST /api/contact` — mensajes en BD | Listo |
@@ -59,8 +83,21 @@ Portfolio con personalidad para **prácticas del módulo superior DAW**, sin esc
 | Panel admin (mensajes + proyectos) | Listo |
 | Tests de integración API (`13/13`) | Listo |
 | Colección Postman | Listo |
-| Accesibilidad / favicon / Open Graph | En curso |
-| Deploy público (front + API) | Pendiente |
+| Open Graph / SEO / deploy público | Pendiente |
+
+---
+
+## Las 5 escenas
+
+| # | Escena | Contenido |
+|---|--------|-----------|
+| 01 | **Portada** | Nombre, ask *Busco prácticas DAW*, experiencia previa, CTAs |
+| 02 | **Mapa** | Sevilla / Galway / Cork — el recorrido es el CV |
+| 03 | **Este proyecto** | Esta web como prueba full stack (API, SQLite, admin) |
+| 04 | **Proyectos** | Destacados (Cinebook, rag-agent-azure) + enlace a GitHub |
+| 05 | **Contacto** | Formulario (asunto DAW por defecto) + GitHub / LinkedIn / CV |
+
+Navegación: rueda / teclado `←` `→` / números del header. En el mapa, click en los puntos rojos.
 
 ---
 
@@ -81,11 +118,15 @@ pagina-web-personal/
 │   ├── requirements.txt
 │   └── .env.example
 ├── assets/
+│   ├── cv/                   PDF del CV
+│   ├── favicon/              Iconos del sitio
 │   ├── logos/                Ilerna, CORE, Multiplicalia, Fluid…
 │   ├── projects/             Capturas / slots de proyectos
 │   └── maps/                 SVG Europa relieve
 ├── content/                  Textos (mapa, copy)
-├── docs/                     Wireframe, design tokens
+├── docs/
+│   ├── screenshots/          Capturas del README
+│   └── …                     Wireframe, design tokens
 ├── postman/                  Colección API
 └── README.md
 ```
@@ -94,8 +135,8 @@ pagina-web-personal/
 |-------------------|-----|
 | `frontend/` | View pública + admin |
 | `backend/` | API FastAPI + SQLite |
-| `assets/` | Logos, mapa, capturas |
-| `docs/` | Diseño y wireframe |
+| `assets/` | Logos, mapa, CV, favicon |
+| `docs/` | Diseño, wireframe, capturas |
 | `postman/` | Colección para probar la API |
 
 ---
@@ -169,14 +210,15 @@ En producción, antes de los scripts del front:
 
 ## Frontend
 
-Metáfora: **páginas de un guión** (scroll horizontal / escenas).
+Metáfora: **páginas de un guión** (scroll horizontal / 5 escenas). Cada escena cabe en el viewport (sin scroll vertical interno).
 
-Incluye, entre otras:
+Incluye:
 
-- portada (nombre, rol, CTA prácticas DAW);
-- trayectoria (Ilerna, CORE, Multiplicalia, Erasmus+);
-- mapa Europa con puntos Sevilla / Galway / Cork;
-- sobre mí, proyectos (API), stack, contacto (API);
+- portada con ask DAW, logos de experiencia previa y descarga de CV;
+- mapa interactivo (Sevilla, Galway, Cork) como currículum;
+- escena «este proyecto» (stack de esta web);
+- proyectos destacados vía API + enlaces a GitHub / demos;
+- contacto (formulario + redes);
 - panel en `frontend/admin/`.
 
 ---
@@ -287,9 +329,9 @@ Arquitectura clara: modelos SQL · routers FastAPI · front estático.
 
 ## Próximos pasos
 
-- Pulido: accesibilidad, favicon, meta Open Graph / SEO.
-- Publicar front + API y enlazar desde LinkedIn.
-- Destacar proyectos con demo en vivo (p. ej. Cinebook).
+- Meta Open Graph / SEO y deploy público (front + API).
+- Enlazar la demo desde LinkedIn.
+- Capturas / demos en vivo de más proyectos (p. ej. Cinebook).
 
 ---
 
