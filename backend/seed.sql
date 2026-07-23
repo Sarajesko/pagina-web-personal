@@ -28,10 +28,38 @@ VALUES
     'Mini sitio del Festival Manga Core 2026: HTML, CSS y JavaScript con reserva de bono validada.',
     'HTML,CSS,JavaScript',
     'https://github.com/Sarajesko/Manga-festival-Web',
-    '../assets/projects/manga-festival.png',
+    '',
     0,
     3,
     1
+),
+(
+    'cinemateca-yugoslav-black-wave',
+    'Cinemateca de la Ola Negra Yugoslava: catálogo editorial, Next.js + Fastify + PostgreSQL.',
+    'TypeScript,Next.js,Fastify',
+    'https://github.com/Sarajesko/cinemateca-yugoslav-black-wave',
+    '',
+    0,
+    4,
+    1
+),
+(
+    'social-content-generator-api',
+    'API FastAPI para posts con MySQL y generación de contenido con Azure OpenAI.',
+    'Python,FastAPI,Azure,MySQL',
+    'https://github.com/Sarajesko/social-content-generator-api',
+    '',
+    0,
+    5,
+    1
+),
+(
+    'task-manager-api',
+    'API REST de tareas con FastAPI, CRUD, endpoints de IA con Azure OpenAI y tests con pytest.',
+    'Python,FastAPI,Azure,pytest',
+    'https://github.com/Sarajesko/task-manager-api',
+    '',
+    0,
+    6,
+    1
 );
-
--- Usuario admin: crear con init_db.py usando ADMIN_USERNAME / ADMIN_PASSWORD del .env
