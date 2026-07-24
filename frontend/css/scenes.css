@@ -774,53 +774,110 @@
 
 @media (max-width: 768px) {
   .mapa__arc {
-    gap: 0.4rem 0.75rem;
+    gap: 0.35rem 0.5rem;
+    max-width: 100%;
+  }
+
+  .mapa__arc-route {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
   .mapa__arc-route > li + li::before {
-    width: 0.7rem;
-    margin: 0 0.2rem;
+    display: none;
+  }
+
+  .mapa__arc-aside {
+    width: 100%;
   }
 
   .mapa__arc-aside::before {
     display: none;
   }
 
-  .mapa__layout--open {
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
-    gap: var(--space-sm);
-  }
-
-  .mapa__legend {
-    max-width: 10rem;
-    padding: 0.4rem 0.5rem;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-
-  .mapa__legend-item {
-    font-size: 0.65rem;
+  .mapa__intro {
+    display: none;
   }
 
   .mapa__credit {
     display: none;
   }
+
+  /* Móvil: mapa arriba, detalle abajo (nunca lado a lado) */
+  .mapa__layout,
+  .mapa__layout--open {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-sm);
+    flex: 0 0 auto;
+  }
+
+  .mapa__wrap {
+    height: auto;
+    max-height: 42vw;
+    min-height: 11rem;
+  }
+
+  .mapa__layout--open .mapa__wrap {
+    max-height: 36vw;
+    min-height: 9.5rem;
+  }
+
+  .mapa__figure {
+    height: 100%;
+    min-height: inherit;
+  }
+
+  .mapa__legend {
+    max-width: 9.5rem;
+    padding: 0.35rem 0.45rem;
+    top: 0.35rem;
+    right: 0.35rem;
+  }
+
+  .mapa__legend-item {
+    font-size: 0.6rem;
+  }
+
+  .mapa__layout--open .mapa__legend {
+    display: none;
+  }
+
+  /* Etiquetas flotantes (SEVILLA…) tapan el mapa en móvil */
+  .mapa__marker::after {
+    display: none;
+  }
+
+  .mapa__panel,
+  .mapa__layout--open .mapa__panel {
+    position: relative;
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    overflow: visible;
+    border-left: 3px solid var(--color-accent);
+    padding: var(--space-sm) var(--space-sm) var(--space-sm) 0.75rem;
+  }
+
+  .mapa__panel-title {
+    font-size: 1.15rem;
+  }
+
+  .mapa__panel-text {
+    font-size: var(--text-sm);
+  }
 }
 
 @media (max-width: 480px) {
-  .mapa__layout--open {
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 1fr) auto;
-    gap: var(--space-xs);
+  .mapa__wrap {
+    max-height: 38vw;
+    min-height: 10rem;
   }
 
-  .mapa__layout--open .mapa__panel {
-    height: auto;
-    max-height: 28%;
-  }
-
-  .mapa__intro {
-    display: none;
+  .mapa__layout--open .mapa__wrap {
+    max-height: 32vw;
+    min-height: 8.5rem;
   }
 }
 
@@ -1016,10 +1073,35 @@
   .este-proyecto__grid {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
+    flex: 0 0 auto;
+    min-height: 0;
   }
 
+  /* En móvil el diagrama solapa; la lista ya cuenta la arquitectura */
   .este-proyecto__flow {
-    padding: var(--space-sm);
+    display: none;
+  }
+
+  .este-proyecto__list {
+    gap: 0.45rem;
+  }
+
+  .este-proyecto__list li {
+    font-size: var(--text-sm);
+  }
+
+  .este-proyecto__stack {
+    position: relative;
+    z-index: 1;
+    margin-top: var(--space-sm);
+  }
+
+  .este-proyecto__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+    padding-bottom: var(--space-md);
   }
 }
 
@@ -1601,7 +1683,7 @@
 @media (max-width: 900px) {
   .proyectos__grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap: var(--space-sm);
   }
 }
@@ -1621,22 +1703,50 @@
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 768px) {
   .proyectos__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xs);
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: var(--space-sm);
+    flex: 0 0 auto;
+    padding-bottom: var(--space-md);
   }
 
   .proyecto-card {
-    padding: 0.55rem 0.6rem;
+    height: auto;
+    min-height: 0;
+    padding: 0.85rem 1rem;
   }
 
   .proyecto-card__title {
-    font-size: var(--text-sm);
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    font-size: 1.05rem;
   }
 
   .proyecto-card__desc {
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
+    font-size: var(--text-sm);
+  }
+
+  .proyecto-dialog {
+    width: calc(100% - 1rem);
+    max-width: 100%;
+    max-height: 90dvh;
+    margin: auto;
+  }
+
+  .proyecto-dialog__panel {
+    max-height: 90dvh;
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 520px) {
+  .proyectos__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
   }
 }
 
