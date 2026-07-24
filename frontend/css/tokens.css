@@ -45,8 +45,8 @@
   --space-lg: 2rem;
   --space-xl: 4rem;
 
-  /* Layout escenas */
-  --scene-width: 100vw;
+  /* Layout escenas — % evita el bug de 100vw > viewport en móvil */
+  --scene-width: 100%;
   --scene-max-content: 720px;
   --header-height: 3.5rem;
   --footer-height: 4.25rem;

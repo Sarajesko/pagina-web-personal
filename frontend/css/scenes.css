@@ -1184,7 +1184,7 @@
 /* Diálogo esquema app */
 
 .proyecto-dialog {
-  width: min(44rem, calc(100vw - 2rem));
+  width: min(44rem, calc(100% - 2rem));
   max-height: min(92vh, 40rem);
   padding: 0;
   border: 1px solid var(--color-border);
