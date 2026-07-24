@@ -275,3 +275,29 @@ a.contacto__social-link:focus-visible {
     max-width: 22rem;
   }
 }
+
+/* Móvil: la portada debe poder hacer scroll (override overflow:hidden desktop) */
+@media (max-width: 768px) {
+  .scene--portada {
+    overflow: hidden;
+  }
+
+  .scene__inner--portada {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  .scene__inner--portada > * {
+    flex-shrink: 0;
+  }
+
+  .portada__proof {
+    margin-top: var(--space-md);
+  }
+
+  .portada__actions {
+    margin-bottom: var(--space-lg);
+  }
+}
