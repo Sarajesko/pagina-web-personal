@@ -101,6 +101,18 @@ button {
   display: block;
 }
 
+.admin-panel[hidden],
+.admin-tab-panel[hidden],
+.admin-header__actions[hidden],
+.admin-empty[hidden],
+.admin-table[hidden],
+.admin-card[hidden],
+.admin-banner[hidden],
+.admin-field-error[hidden],
+[hidden] {
+  display: none !important;
+}
+
 .admin-card {
   background: var(--color-bg-panel);
   border: 1px solid var(--color-border);

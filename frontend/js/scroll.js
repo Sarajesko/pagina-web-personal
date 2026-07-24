@@ -103,9 +103,15 @@
     return !!el.closest("input, textarea, select, button[type='submit']");
   }
 
+  function isProjectDialogOpen() {
+    var dialog = document.getElementById("proyecto-dialog");
+    return !!(dialog && dialog.open);
+  }
+
   container.addEventListener(
     "wheel",
     function (e) {
+      if (isProjectDialogOpen()) return;
       if (scrollLock) {
         e.preventDefault();
         return;
@@ -164,6 +170,7 @@
   );
 
   document.addEventListener("keydown", function (e) {
+    if (isProjectDialogOpen()) return;
     if (isFormField(document.activeElement)) return;
 
     var idx = currentIndex();

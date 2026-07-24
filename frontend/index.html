@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=59">
-  <link rel="stylesheet" href="css/portada.css?v=59">
+  <link rel="stylesheet" href="css/main.css?v=67">
+  <link rel="stylesheet" href="css/portada.css?v=67">
   <style>
     /* Cache-proof: Limerick = otros datos de interés */
     .mapa__marker--interest,
@@ -125,8 +125,36 @@
       <div class="scene__inner scene__inner--mapa">
         <p class="script-label">INT. MAPA — TRAYECTORIA — DÍA</p>
         <h2 id="mapa-title" class="scene__title">Por qué yo, mi viaje profesional</h2>
+        <nav class="mapa__arc" aria-label="Resumen del viaje profesional">
+          <ol class="mapa__arc-route">
+            <li>
+              <button type="button" class="mapa__arc-node" data-location="sevilla">
+                <span class="mapa__arc-dot" aria-hidden="true"></span>
+                <span class="mapa__arc-text"><strong>Sevilla</strong> · DAW - Multiplicalia</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mapa__arc-node" data-location="logrono">
+                <span class="mapa__arc-dot" aria-hidden="true"></span>
+                <span class="mapa__arc-text"><strong>Logroño</strong> · UNIR</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mapa__arc-node" data-location="galway">
+                <span class="mapa__arc-dot" aria-hidden="true"></span>
+                <span class="mapa__arc-text"><strong>Galway</strong> · Beca Unión Europea</span>
+              </button>
+            </li>
+          </ol>
+          <p class="mapa__arc-aside">
+            <button type="button" class="mapa__arc-node mapa__arc-node--interest" data-location="limerick">
+              <span class="mapa__arc-dot mapa__arc-dot--interest" aria-hidden="true"></span>
+              <span class="mapa__arc-text"><strong>Limerick</strong> · inglés</span>
+            </button>
+          </p>
+        </nav>
         <p class="mapa__intro">
-          Pulsa un punto del mapa — el recorrido es el currículum.
+          Pulsa un punto del mapa o del resumen — el recorrido es el currículum.
           Usa <kbd>←</kbd> <kbd>→</kbd> para seguir el guión.
         </p>
         <div class="mapa__layout" id="mapa-layout">
@@ -172,14 +200,28 @@
         <p class="script-label">INT. ESTE PROYECTO — FULL STACK — DÍA</p>
         <h2 id="este-proyecto-title" class="scene__title">Esta web es la prueba</h2>
         <p class="este-proyecto__lead">
-          No es solo un portfolio estático. Es un producto full stack que puedes auditar.
+          No es un portfolio estático: es un producto full stack que puedes auditar (front, API, BD y admin).
         </p>
-        <ul class="scene__list este-proyecto__list">
-          <li><strong>Frontend</strong> — HTML, CSS, JS · scroll lateral tipo guión</li>
-          <li><strong>API</strong> — Python + FastAPI · también Azure / IA en otros repos</li>
-          <li><strong>Base de datos</strong> — SQLite · formulario que guarda mensajes</li>
-          <li><strong>Admin</strong> — login, mensajes y CRUD de proyectos</li>
-        </ul>
+
+        <div class="este-proyecto__grid">
+          <ul class="scene__list este-proyecto__list">
+            <li data-layer="front"><strong>Frontend</strong> — HTML, CSS, JS · scroll lateral tipo guión</li>
+            <li data-layer="api"><strong>API</strong> — Python + FastAPI · también Azure / IA en otros repos</li>
+            <li data-layer="db"><strong>Base de datos</strong> — SQLite · el formulario guarda mensajes</li>
+            <li data-layer="admin"><strong>Admin</strong> — login, mensajes y CRUD de proyectos</li>
+          </ul>
+
+          <div class="este-proyecto__flow">
+            <p class="este-proyecto__flow-label">Arquitectura</p>
+            <ol class="este-proyecto__flow-steps">
+              <li data-layer="front" tabindex="0"><span>Front</span><small>guión · 5 escenas</small></li>
+              <li data-layer="api" tabindex="0"><span>API</span><small>FastAPI</small></li>
+              <li data-layer="db" tabindex="0"><span>SQLite</span><small>mensajes · proyectos</small></li>
+              <li data-layer="admin" tabindex="0"><span>Admin</span><small>sesión · CRUD</small></li>
+            </ol>
+          </div>
+        </div>
+
         <div class="este-proyecto__stack">
           <span class="stack__tag">HTML</span>
           <span class="stack__tag">CSS</span>
@@ -187,8 +229,18 @@
           <span class="stack__tag">Python</span>
           <span class="stack__tag">FastAPI</span>
           <span class="stack__tag">SQLite</span>
-          <span class="stack__tag">Azure</span>
+          <span class="stack__tag">Docker</span>
           <span class="stack__tag">Git</span>
+        </div>
+
+        <div class="este-proyecto__actions">
+          <a class="este-proyecto__link" href="admin/">Abrir admin →</a>
+          <a
+            class="este-proyecto__link"
+            href="https://github.com/Sarajesko/pagina-web-personal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Código en GitHub →</a>
         </div>
       </div>
     </section>
@@ -199,12 +251,11 @@
         <p class="script-label">INT. PROYECTOS — REPOS — DÍA</p>
         <h2 id="proyectos-title" class="scene__title">Proyectos</h2>
         <p class="proyectos__intro">
-          Seis repos del perfil. El resto está en
+          Pulsa una tarjeta para ver captura o esquema. El resto está en
           <a href="https://github.com/Sarajesko" target="_blank" rel="noopener noreferrer">github.com/Sarajesko →</a>
         </p>
         <div class="proyectos__grid" id="proyectos-grid">
-          <article class="proyecto-card proyecto-card--featured">
-            <p class="proyecto-card__badge">Destacado</p>
+          <article class="proyecto-card">
             <h3 class="proyecto-card__title">Cinebook</h3>
             <p class="proyecto-card__desc">Catálogo de libros de cine: inventario, ISBN, wishlist y estadísticas.</p>
             <div class="proyecto-card__tags">
@@ -217,8 +268,7 @@
               <a class="proyecto-card__link" href="https://cinebook-o4t3.onrender.com" target="_blank" rel="noopener noreferrer">Demo</a>
             </div>
           </article>
-          <article class="proyecto-card proyecto-card--featured">
-            <p class="proyecto-card__badge">Destacado</p>
+          <article class="proyecto-card">
             <h3 class="proyecto-card__title">rag-agent-azure</h3>
             <p class="proyecto-card__desc">API FastAPI con agente RAG, Azure SQL, Docker y Azure Container Apps.</p>
             <div class="proyecto-card__tags">
@@ -240,6 +290,7 @@
             </div>
             <div class="proyecto-card__links">
               <a class="proyecto-card__link" href="https://github.com/Sarajesko/Manga-festival-Web" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="proyecto-card__link" href="https://sarajesko.github.io/Manga-festival-Web/examen.html" target="_blank" rel="noopener noreferrer">Demo</a>
             </div>
           </article>
           <article class="proyecto-card">
@@ -279,6 +330,19 @@
             </div>
           </article>
         </div>
+
+        <dialog class="proyecto-dialog" id="proyecto-dialog" aria-labelledby="proyecto-dialog-title">
+          <div class="proyecto-dialog__panel">
+            <button type="button" class="proyecto-dialog__close" data-proyecto-close aria-label="Cerrar">×</button>
+            <p class="proyecto-dialog__label">Proyecto</p>
+            <h3 class="proyecto-dialog__title" id="proyecto-dialog-title" data-proyecto-title></h3>
+            <p class="proyecto-dialog__desc" data-proyecto-desc></p>
+            <p class="proyecto-dialog__proves-label">Qué demuestra</p>
+            <ul class="proyecto-dialog__proves" data-proyecto-proves></ul>
+            <div class="proyecto-dialog__schema" data-proyecto-schema></div>
+            <div class="proyecto-dialog__links" data-proyecto-links></div>
+          </div>
+        </dialog>
       </div>
     </section>
 
@@ -328,10 +392,10 @@
             <label for="contact-message">Mensaje</label>
             <textarea id="contact-message" name="message" required></textarea>
           </div>
-          <div class="contacto__field">
-            <label>
+          <div class="contacto__field contacto__field--privacy">
+            <label class="contacto__privacy" for="contact-privacy">
               <input type="checkbox" id="contact-privacy" name="privacy" required>
-              He leído la política de privacidad
+              <span>He leído la política de privacidad</span>
             </label>
           </div>
           <button type="submit" class="contacto__submit">Enviar</button>
@@ -364,10 +428,11 @@
       </span>
     </p>
   </footer>
-  <script src="js/scroll.js?v=23" defer></script>
-  <script src="js/map.js?v=59" defer></script>
+  <script src="js/scroll.js?v=60" defer></script>
+  <script src="js/map.js?v=67" defer></script>
+  <script src="js/este-proyecto.js?v=1" defer></script>
   <script src="js/contact.js?v=59" defer></script>
-  <script src="js/projects.js?v=59" defer></script>
+  <script src="js/projects.js?v=64" defer></script>
   <script src="js/project-images.js" defer></script>
 </body>
 </html>

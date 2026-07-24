@@ -16,6 +16,7 @@
   var layout = document.getElementById("mapa-layout");
   var routes = figure && figure.querySelector(".mapa__routes");
   var markers = document.querySelectorAll(".mapa__marker");
+  var arcNodes = document.querySelectorAll(".mapa__arc-node");
   if (!figure || !img || !panel || markers.length === 0) return;
 
   var ROUTE_ORDER = ["sevilla", "logrono", "galway"];
@@ -380,6 +381,12 @@
       m.setAttribute("aria-pressed", active ? "true" : "false");
     });
 
+    arcNodes.forEach(function (node) {
+      var active = node.getAttribute("data-location") === id;
+      node.classList.toggle("mapa__arc-node--active", active);
+      node.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+
     if (loc.stages && loc.stages.length) {
       showStage(loc, 0);
     } else {
@@ -398,6 +405,14 @@
     marker.addEventListener("click", function (e) {
       e.stopPropagation();
       selectLocation(marker.getAttribute("data-location"));
+    });
+  });
+
+  arcNodes.forEach(function (node) {
+    node.setAttribute("aria-pressed", "false");
+    node.addEventListener("click", function (e) {
+      e.stopPropagation();
+      selectLocation(node.getAttribute("data-location"));
     });
   });
 

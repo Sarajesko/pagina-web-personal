@@ -1,0 +1,13 @@
+# Dominio con HTTPS automático (Let's Encrypt):
+#   SITE_ADDRESS=portfolio.tudominio.com
+# Solo IP (pruebas, HTTP):
+#   SITE_ADDRESS=:80
+
+{$SITE_ADDRESS::80} {
+	encode gzip
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+	reverse_proxy api:10000
+}

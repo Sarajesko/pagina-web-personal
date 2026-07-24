@@ -6,28 +6,30 @@ Web personal / portfolio con metáfora de **guión** (**5 escenas**, scroll late
 **Repositorio:** [github.com/Sarajesko/pagina-web-personal](https://github.com/Sarajesko/pagina-web-personal)  
 **LinkedIn:** [linkedin.com/in/pablogarciamarquez](https://www.linkedin.com/in/pablogarciamarquez)  
 **Demo online (estático):** [sarajesko.github.io/pagina-web-personal/frontend](https://sarajesko.github.io/pagina-web-personal/frontend/)  
-**Demo full stack (contacto + admin):** `https://pagina-web-pablo-api.onrender.com/frontend/` *(tras desplegar el Blueprint — ver [Deploy en Render](#deploy-en-render))*
+**Demo full stack (recomendado):** VPS Hetzner — ver [Deploy en Hetzner](deploy/hetzner.md)
 
 ---
 
-## Deploy en Render
+## Deploy en Hetzner (recomendado)
 
-Un solo servicio Docker sirve **API + frontend + admin** (mismo origen → cookies OK).
+Una URL siempre encendida (sin cold start): **Caddy + Docker** sirven API, portfolio y admin. Guía completa: [`deploy/hetzner.md`](deploy/hetzner.md).
 
-1. Sube este repo a GitHub (ya está en `Sarajesko/pagina-web-personal`).
-2. En [Render](https://dashboard.render.com) → **New** → **Blueprint** → conecta el repo → usa `render.yaml`.
-3. O **New Web Service** → Docker → root del repo → el `Dockerfile` ya está listo.
-4. Variables importantes (también en `render.yaml`):
-   - `ADMIN_USERNAME` / `ADMIN_PASSWORD`
-   - `CORS_ORIGINS` = `https://sarajesko.github.io,https://pagina-web-pablo-api.onrender.com` (ajusta el nombre del servicio)
-   - `SESSION_SAME_SITE=none` + `SESSION_HTTPS_ONLY=true` (Pages ↔ API)
-5. URLs tras el deploy:
-   - Portfolio: `https://<servicio>.onrender.com/frontend/`
-   - Admin: `https://<servicio>.onrender.com/frontend/admin/`
-   - Health: `https://<servicio>.onrender.com/api/health`
-6. Si el nombre del servicio no es `pagina-web-pablo-api`, actualiza `PRODUCTION_API` en `frontend/js/config.js` y `CORS_ORIGINS`.
+Resumen:
 
-El plan free de Render **se duerme** tras inactividad; el primer request puede tardar ~30–60 s.
+1. Crear VPS Ubuntu (CAX11 o CX22) y abrir puertos 22/80/443.
+2. Instalar Docker, clonar el repo, copiar `deploy/env.example` → `.env`.
+3. `docker compose up -d --build`
+4. Portfolio: `https://TU_DOMINIO/frontend/` · Admin: `/frontend/admin/`
+
+## Deploy en Render (alternativa)
+
+Un solo servicio Docker (mismo `Dockerfile`). El plan **free se duerme**; para producción preferir Hetzner o Render Starter.
+
+1. [Render](https://dashboard.render.com) → Blueprint / Web Service Docker → `render.yaml` o `Dockerfile`.
+2. Variables: `ADMIN_*`, `CORS_ORIGINS`, `SESSION_*` (ver `render.yaml`).
+3. URLs: `https://<servicio>.onrender.com/frontend/`
+
+Si usas Pages + API Render, actualiza `PRODUCTION_API` en `frontend/js/config.js`.
 
 ---
 ## Índice
@@ -314,7 +316,7 @@ cd backend
 python test_api.py
 ```
 
-Suite de integración: health, contacto, proyectos, auth admin, CORS y formatos de error. Esperado: **`13/13 tests passed`**.
+Suite de integración (BD temporal + lifespan): health, estáticos, contacto↔admin, CRUD proyectos, auth, CORS y errores. Esperado: **`OK` — 21 tests**.
 
 ---
 

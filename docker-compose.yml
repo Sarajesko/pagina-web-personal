@@ -1,0 +1,56 @@
+# Producción — Hetzner (API + frontend + admin detrás de Caddy)
+# Uso: copia deploy/env.example → .env en la raíz del repo y ajusta valores.
+#   docker compose up -d --build
+#
+# Importante: las credenciales salen del fichero `.env` (env_file), no de
+# variables sueltas del shell del host (evita pisar ADMIN_PASSWORD/ENV).
+
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: true
+    environment:
+      PORT: "10000"
+      DATABASE_PATH: /app/backend/instance/portfolio.db
+    volumes:
+      - portfolio_data:/app/backend/instance
+    expose:
+      - "10000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:10000/api/health')",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      # Lee SITE_ADDRESS desde el .env del proyecto (Compose lo carga para interpolar)
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  portfolio_data:
+  caddy_data:
+  caddy_config:

@@ -2,6 +2,7 @@
 **/__pycache__
 **/*.pyc
 **/.env
+**/.env.*
 **/instance
 **/*.db
 .venv
@@ -10,3 +11,6 @@ node_modules
 docs
 *.md
 .cursor
+backend/test_api.py
+docker-compose*.yml
+render.yaml

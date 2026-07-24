@@ -1,7 +1,8 @@
 /**
  * API base URL — contact, projects, admin.
- * Producción: misma origen en Render (""), o la URL pública de la API.
- * Actualiza PRODUCTION_API si cambias el servicio en Render.
+ * - localhost → API local
+ * - GitHub Pages → PRODUCTION_API (backend externo)
+ * - Mismo origen (Hetzner / Render / tunnel) → ""
  */
 (function () {
   "use strict";
@@ -16,16 +17,12 @@
     return;
   }
 
-  /* Front servido por la propia API (Render / tunnel): mismo origen */
-  if (
-    host.indexOf("onrender.com") !== -1 ||
-    host.indexOf("loca.lt") !== -1 ||
-    host.indexOf("ngrok") !== -1
-  ) {
-    window.PORTFOLIO_API = "";
+  /* Front estático en Pages → API remota */
+  if (host.indexOf("github.io") !== -1) {
+    window.PORTFOLIO_API = PRODUCTION_API;
     return;
   }
 
-  /* GitHub Pages u otro estático → API en Render */
-  window.PORTFOLIO_API = PRODUCTION_API;
+  /* Hetzner, Render, tunnels, etc.: API en el mismo origen */
+  window.PORTFOLIO_API = "";
 })();
